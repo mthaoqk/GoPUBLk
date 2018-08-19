@@ -1,0 +1,51 @@
+label {
+    font-weight: bold;
+}
+.btn-primary {
+    color: #e5222a;
+    background-color: white;
+    border-color: #e5222a;
+}
+.jumbotron {
+    border: 3px white;
+    border-radius: 3px 3px;
+    background-color: #e5222a;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a.forgottonPass:link {
+    color: white;
+}
+
+/* visited link */
+
+a.forgottonPass:visited {
+    color: white;
+}
+
+/* mouse over link */
+
+a.forgottonPass:hover {
+    color: white;
+}
