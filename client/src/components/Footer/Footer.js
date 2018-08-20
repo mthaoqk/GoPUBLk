@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () => (
   <footer className="footer">
-    <span>goPUBLC 2018</span>
+<h3>@CopyWright</h3>
   </footer>
 );
 
