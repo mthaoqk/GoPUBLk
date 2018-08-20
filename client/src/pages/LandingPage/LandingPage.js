@@ -7,23 +7,68 @@ const LandingPage = () => (
     <Hero backgroundImage="https://s8.postimg.cc/aqr93z6lx/test.jpg">
       <h1>GoPUBLk</h1>
     </Hero>
-   
-    <div className="container" id="LandingCon">
-      <div className="row">
-      <div className="col-md-12">
-        <div className="jumbotron" id="LandingJum">
-          <form>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"></input>
-            <input type="password" class="form-control" id="passWord" placeholder="Enter password"></input>
-            <a class="forgottonPass" href="#" target="_blank">Forgot Password?</a>
-            <br></br>
-            <button type="submit" class="btn btn-primary">Sign In</button>
-            <button type="submit" class="btn btn-primary">Create Account</button>
-          </form>
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <h1>Log-in</h1>
+            <form>
+              <div class="form-group">
+                <label for="loginEmail">Username / Email address</label>
+                <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email" />
+               
+              </div>
+              <div class="form-group">
+                <label for="loginpass">Password</label>
+                <input type="password" class="form-control" id="loginpass" placeholder="Password" />
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe" />
+                <label class="form-check-label" for="rememberMe">Remember Me?</label>
+              </div>
+              <div id="loginMessage"></div>
+              
+              <button type="submit" id ="loginSubmit" class="btn btn-primary">Submit</button>
+            </form>
           </div>
+          
+
+          <div class="col-sm">
+            <h1>Sign-up</h1>
+            <form>
+              <div class="form-group">
+                <label for="signupEmail">Email address</label>
+                <input type="email" class="form-control" id="signupEmail" aria-describedby="emailHelp" placeholder="Enter email" />
+                <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="signupPass">Password</label>
+                <input type="password" class="form-control" id="signupPass" placeholder="Password" />
+              </div>
+              <div class="form-group">
+                <label for="signupPassConfirm">Confirm Password</label>
+                <input type="password" class="form-control" id="signupPassConfirm" placeholder="Password" />
+              </div>
+              <div id="signupMessage"></div>
+              <button type="submit" id="signupSubmit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+
         </div>
       </div>
     </div>
+
+    <script>
+      {
+        // insert the code for the page... maybe?
+      }
+      
+    </script>
+
+
+
   </div>
 );
 
