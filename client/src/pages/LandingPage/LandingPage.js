@@ -7,8 +7,6 @@ const LandingPage = () => (
     <Hero backgroundImage="https://s8.postimg.cc/aqr93z6lx/test.jpg">
       <h1>GoPUBLk</h1>
     </Hero>
-
-
     <div class="jumbotron">
       <div class="container">
         <div class="row">
@@ -31,6 +29,7 @@ const LandingPage = () => (
               <div id="loginMessage"></div>
               
               <button type="submit" id ="loginSubmit" class="btn btn-primary">Submit</button>
+
             </form>
           </div>
           
