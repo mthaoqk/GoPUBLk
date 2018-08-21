@@ -9,37 +9,13 @@ h1{
     background-color: white;
     border-color: #e5222a;
 }
-#LandingCon {
-    border: 3px white;
-    border-radius: 3px 3px;
-    background-color: #e5222a;
-    margin-top: 30px;
+#LandingJum{
     text-align: center;
-    height: 400px;
-    width:400px;
-    position: static;
-    z-index: 1;
-}
-#LandingJum {
-    border: 3px white;
-    border-radius: 3px 3px;
+    margin-top: 30px;
     background-color: #e5222a;
+    color: white;
+    box-shadow:2px 2px 5px #80755C;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 a.forgottonPass:link {
     color: white;
 }
