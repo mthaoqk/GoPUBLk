@@ -7,19 +7,47 @@ const LandingPage = () => (
     <Hero backgroundImage="https://s8.postimg.cc/aqr93z6lx/test.jpg">
       <h1>GoPUBLk</h1>
     </Hero>
-   
-    <div className="container" id="LandingCon">
-      <div className="row">
-      <div className="col-md-12">
-        <div className="jumbotron" id="LandingJum">
-          <form>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"></input>
-            <input type="password" class="form-control" id="passWord" placeholder="Enter password"></input>
-            <a class="forgottonPass" href="#" target="_blank">Forgot Password?</a>
-            <br></br>
-            <button type="submit" class="btn btn-primary">Sign In</button>
-            <button type="submit" class="btn btn-primary">Create Account</button>
-          </form>
+    <div id="LandingJum" className="jumbotron">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm">
+            <h1>Log-in</h1>
+            <form>
+              <div className="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></input>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></input>
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+            </form>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          <div class="col-sm">
+            <h1>Sign-up</h1>
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></input>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></input>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Confirm Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></input>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
           </div>
         </div>
       </div>

@@ -9,6 +9,10 @@ nav {
   text-align: center;
   font-family: 'Kosugi', sans-serif;
 }
+#logo{
+  height:50px;
+  width:50px;
+}
 
 a:link {
   color: white;
