@@ -18,6 +18,7 @@ router.post('/', auth.required, function(req,res,next){
 router.param('Project', function(req,res,next,slug){
     Project.findOne({slug: slug})
         .populate('author')
+        //author if we title author as the creator or could be switched to creator...? for all author titles
         .then(function(Project){
             if(!Project){
                 return res.sendStatus(404);
@@ -27,7 +28,8 @@ router.param('Project', function(req,res,next,slug){
         }).catch(next);
 });
 
-router.get('/:Project', auth.optional, function(req,res,next){
+router.get('/:Project', auth.optional, function(req,res,next){ 
+    //project or project by ID.....? this for all /:Project
     Promise.all([
         req.payload ? User.findById(req.payload.id) : null,
         req.Project.populate('author').execPopulate()
