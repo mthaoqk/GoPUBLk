@@ -10,26 +10,12 @@ h1{
     border-color: #e5222a;
 }
 #LandingJum{
-    /* height:600px;
-    width:600px; */
     text-align: center;
+    margin-top: 30px;
+    background-color: #e5222a;
+    color: white;
+    box-shadow:2px 2px 5px #80755C;
 }
-.container {
-    font-family: 'Kosugi Maru', sans-serif;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 a.forgottonPass:link {
     color: white;
 }
