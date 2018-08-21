@@ -63,6 +63,8 @@ const LandingPage = () => (
     <script>
       {
         // insert the code for the page... maybe?
+
+        console.log("Script is working")
       }
       
     </script>
