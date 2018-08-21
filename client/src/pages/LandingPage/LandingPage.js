@@ -7,51 +7,67 @@ const LandingPage = () => (
     <Hero backgroundImage="https://s8.postimg.cc/aqr93z6lx/test.jpg">
       <h1>GoPUBLk</h1>
     </Hero>
-    <div id="LandingJum" className="jumbotron">
-      <div className="container">
-        <div className="row">
-          <div className="col-sm">
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
             <h1>Log-in</h1>
             <form>
-              <div className="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></input>
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <div class="form-group">
+                <label for="loginEmail">Username / Email address</label>
+                <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email" />
+               
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></input>
+                <label for="loginpass">Password</label>
+                <input type="password" class="form-control" id="loginpass" placeholder="Password" />
               </div>
               <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <input type="checkbox" class="form-check-input" id="rememberMe" />
+                <label class="form-check-label" for="rememberMe">Remember Me?</label>
               </div>
+              <div id="loginMessage"></div>
+              
+              <button type="submit" id ="loginSubmit" class="btn btn-primary">Submit</button>
+
             </form>
-            <button type="submit" class="btn btn-primary">Submit</button>
           </div>
+          
+
           <div class="col-sm">
             <h1>Sign-up</h1>
             <form>
               <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"></input>
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <label for="signupEmail">Email address</label>
+                <input type="email" class="form-control" id="signupEmail" aria-describedby="emailHelp" placeholder="Enter email" />
+                <small class="form-text text-muted">We'll never share your email with anyone else.</small>
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></input>
+                <label for="signupPass">Password</label>
+                <input type="password" class="form-control" id="signupPass" placeholder="Password" />
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Confirm Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></input>
+                <label for="signupPassConfirm">Confirm Password</label>
+                <input type="password" class="form-control" id="signupPassConfirm" placeholder="Password" />
               </div>
-
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <div id="signupMessage"></div>
+              <button type="submit" id="signupSubmit" class="btn btn-primary">Submit</button>
             </form>
           </div>
+
         </div>
       </div>
     </div>
+
+    <script>
+      {
+        // insert the code for the page... maybe?
+      }
+      
+    </script>
+
+
+
   </div>
 );
 
