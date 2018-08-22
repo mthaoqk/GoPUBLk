@@ -1,7 +1,8 @@
 import React from "react";
 import Hero from "../../components/Hero";
 import "./About.css";
-
+import pic1 from "./entrepreneur.jpg";
+import pic2 from "./angelinvestor-300x300.jpg";
 const About = () => (
   <div>
     <Hero backgroundImage="https://s8.postimg.cc/aqr93z6lx/test.jpg">
@@ -12,16 +13,48 @@ const About = () => (
       <div className="row">
         <div className="col-md-12">
           <div className="jumbotron">
-            <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be?
-              He's the exact opposite of the hero. And most times they're friends, like you and me!
-              I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.
+            <h1>The Mission of GoPUBLk</h1>
+            <p>Connecting Entrepreneurs and Angel Investors. Fostering Relationships, Effecting Opportunity.
+              <hr></hr>
               </p>
-
+          </div>
+          <div className="row">
+            <div className="col-md-6">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src={pic1} alt="Card image cap"></img>
+                  <div class="card-body">
+                  <h5 class="card-title">Benefits For Entrepreneurs</h5>
+                  <ul>
+                    <li>High Exposure</li>
+                    <li>Diverse Investor Backgrounds</li>
+                    <li>Mentorship</li>
+                    <li>Low Barrier to Entry</li>
+                  </ul>
+                  <a href="/create" class="btn btn-primary">Submit Your Project</a>
+                  </div>
+                </div>
+          </div>
+          <div className="col-md-6">
+          <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src={pic2} alt="Card image cap"></img>
+                  <div class="card-body">
+                  <h5 class="card-title">Benefits For Investors</h5>
+                  <ul>
+                    <li>Broad range of industries</li>
+                    <li>Highly detailed business plans</li>
+                    <li>Ease of use</li>
+                    <li>Low barrier to entry</li>
+                  </ul>
+                  <a href="/search" class="btn btn-primary">Browse Projects</a>
+                  </div>
+                </div>
+          </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+      
 );
 
 export default About;
