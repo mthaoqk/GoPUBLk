@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../../components/Hero";
 import "./Profile.css";
+import ProfileNavBar from "../../components/ProfileNavBar/"
 
 const Profile = () => (
   <div>
@@ -17,7 +18,9 @@ const Profile = () => (
            and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that
             killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.
         </p>
+      
           </div>
+          <ProfileNavBar/>
         </div>
       </div>
     </div>
