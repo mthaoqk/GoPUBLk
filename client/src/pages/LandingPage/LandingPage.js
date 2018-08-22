@@ -147,7 +147,7 @@ class LandingPage extends Component {
                       value={this.state.signupEmail}
                       onChange={this.handleChange}
                     />
-                    <small className="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <small className="form-text">We'll never share your email with anyone else.</small>
                   </div>
                   <div className="form-group">
 
