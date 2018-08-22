@@ -28,8 +28,7 @@ class About extends Component {
               </div>
               <div className="row">
                 <div className="col-md-6">
-                  <div class="card"
-                  // style="width: 18rem;"
+                  <div class="card" id="aboutImage"
                   >
                     <img class="card-img-top" src={pic1} alt="En"></img>
                     <div class="card-body">
@@ -40,13 +39,12 @@ class About extends Component {
                         <li>Mentorship</li>
                         <li>Low Barrier to Entry</li>
                       </ul>
-                      <a href="/create" class="btn btn-primary">Submit Your Project</a>
+                      <a href="/create" class="btn btn-primary" id="linkProj">Submit Your Project</a>
                     </div>
                   </div>
                 </div>
                 <div className="col-md-6">
-                  <div class="card"
-                  // style="width: 18rem;"
+                  <div class="card" id="aboutImage"
                   >
                     <img class="card-img-top" src={pic2} alt="card-img-top"></img>
                     <div class="card-body">
@@ -57,7 +55,7 @@ class About extends Component {
                         <li>Ease of use</li>
                         <li>Low barrier to entry</li>
                       </ul>
-                      <a href="/search" class="btn btn-primary">Browse Projects</a>
+                      <a href="/search" class="btn btn-primary" id="linkProj">Browse Projects</a>
                     </div>
                   </div>
                 </div>
