@@ -55,8 +55,13 @@ class LandingPage extends Component {
     console.log("Submit Login button pressed");
     event.preventDefault();
 
+    let loginInfo = {
+      username: this.state.signupEmail,
+      pass: this.state.pass
+    }
+
     // get salt for username attempt
-    $.post("/api/salt", this.state.loginEmail)
+    $.post("/login", loginInfo)
       .then(function (res) {
 
 
@@ -79,7 +84,7 @@ class LandingPage extends Component {
     }
 
 
-    $.post("/api/user", newUser)
+    $.post("/signup", newUser)
       .then(function (res) {
         console.log(res);
 
