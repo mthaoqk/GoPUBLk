@@ -48,7 +48,7 @@ class About extends Component {
                   <div class="card"
                   // style="width: 18rem;"
                   >
-                    <img class="card-img-top" src={pic2} alt="Card image cap"></img>
+                    <img class="card-img-top" src={pic2} alt="card-img-top"></img>
                     <div class="card-body">
                       <h5 class="card-title">Benefits For Investors</h5>
                       <ul>
