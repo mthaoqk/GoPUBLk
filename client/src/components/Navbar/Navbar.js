@@ -8,7 +8,7 @@ const Navbar = props => (
       <img id="logo" src="https://s15.postimg.cc/je0lkp23v/Transparent_Logo_Tre.png" alt="MyLogo" />
     </Link>
     <div>
-      <ul className="navbar-nav">
+      <ul       className="navbar-nav navbarRow" >
 
         <li
           className={
