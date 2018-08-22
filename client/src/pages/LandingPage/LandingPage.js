@@ -64,7 +64,7 @@ class LandingPage extends Component {
     $.post("/login", loginInfo)
       .then(function (res) {
 
-
+        console.log(res.body);
       });
 
 
