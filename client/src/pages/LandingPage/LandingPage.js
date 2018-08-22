@@ -14,9 +14,8 @@ const LandingPage = () => (
             <h1>Log-in</h1>
             <form>
               <div className="form-group">
-                <label for="loginEmail">Username / Email address</label>
+                <label for="loginEmail">Email address</label>
                 <input type="email" className="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email" />
-                <small class="form-text text-muted">We'll never share your email with anyone else.</small>
               </div>
               <div className="form-group">
                 <label for="loginpass">Password</label>
@@ -39,7 +38,6 @@ const LandingPage = () => (
               <div class="form-group">
                 <label for="signupEmail">Email address</label>
                 <input type="email" className="form-control" id="signupEmail" aria-describedby="emailHelp" placeholder="Enter email" />
-                <small class="form-text text-muted">We'll never share your email with anyone else.</small>
               </div>
               <div class="form-group">
                 <label for="signupPass">Password</label>

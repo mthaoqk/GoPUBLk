@@ -11,11 +11,27 @@ const CreateProject = () => (
     <div className="container">
       <div className="row">
         <div className="col-md-12">
-          <div className="jumbotron">
-            <p>Look, just because I don't be givin' no man a foot massage don't make it right for Marsellus to throw Antwone into a glass motherfuckin' house, fuckin' up the way the nigger talks.
-              Motherfucker do that shit to me, he better paralyze my ass, 'cause I'll kill the motherfucker,
-               know what I'm sayin'?
-            </p>
+          <div id="CreateProj" className="jumbotron">
+            <h1 id="CProjectTitle">Create a project</h1>
+            <form>
+              <div className="form-group">
+                <label for="ProjectInput">Title</label>
+                <input type="text" className="form-control" id="ProjectTitle" placeholder="Title"></input>
+              </div>
+              <div className="form-group">
+                <label for="MinFunds">Goal</label>
+                <input type="number" className="form-control" id="Funds" placeholder="1,000.00"></input>
+              </div>
+              <div className="form-group">
+                <label for="Tags">Tags</label>
+                <input type="text" className="form-control" id="Tags" placeholder="Technology"></input>
+              </div>
+              <div className="form-group">
+                <label for="DesText">Description</label>
+                <textarea type="text" className="form-control" id="Description" placeholder="Description"></textarea>
+              </div>
+            </form>
+            <button type="submit" id="ProjectSubmit" className="btn btn-primary">Submit</button>
           </div>
         </div>
       </div>

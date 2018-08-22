@@ -1,12 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+import "./ProfileNavBar.css";
 
-const Navbar = props => (
+const ProfileNavBar = props => (
   <nav className="navbar navbar-expand-lg">
-    <Link className="navbar-brand" to="/">
-      <img id="logo" src="https://s15.postimg.cc/je0lkp23v/Transparent_Logo_Tre.png" />
-    </Link>
     <div>
       <ul className="navbar-nav">
 
@@ -18,61 +15,57 @@ const Navbar = props => (
           }
         >
           <Link to="/" className="nav-link">
-            Sign-In
+            My Projects
           </Link>
         </li>
-
         <li
           className={
-            window.location.pathname === "create"
+            window.location.pathname === "/"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="create" className="nav-link">
-            Create
+          <Link to="/" className="nav-link">
+            My Investments
           </Link>
         </li>
-
         <li
           className={
-            window.location.pathname === "/search"
+            window.location.pathname === "/"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/search" className="nav-link">
-            Search
+          <Link to="/" className="nav-link">
+            Favorite Projects
           </Link>
         </li>
-
         <li
           className={
-            window.location.pathname === "profile"
+            window.location.pathname === "/"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="profile" className="nav-link">
-            Profile
+          <Link to="/" className="nav-link">
+            My Offers
           </Link>
         </li>
-
         <li
           className={
-            window.location.pathname === "/about"
+            window.location.pathname === "/"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/about" className="nav-link">
-            About
+          <Link to="/" className="nav-link">
+           Offers
           </Link>
         </li>
-        
+
       </ul>
     </div>
   </nav>
 );
 
-export default Navbar;
+export default ProfileNavBar;
