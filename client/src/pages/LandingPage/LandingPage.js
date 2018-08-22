@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import $ from 'jquery';
 // import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import Hero from "../../components/Hero";
 import "./LandingPage.css";
@@ -28,9 +29,14 @@ class LandingPage extends Component {
   validateSignupForm() {
 
     // if all the fields have values in them
-    if( this.state.signupEmail.length > 0 && this.state.signupPass.length > 0 && this.state.signupPassconfirm.length > 0){
-      if(this.state.signupPass === this.state.signupPassconfirm){
+    if (this.state.signupEmail.length > 0 && this.state.signupPass.length > 0 && this.state.signupPassconfirm.length > 0) {
+      if (this.state.signupPass === this.state.signupPassconfirm) {
+
+        $("#signupMessage").html(""); // clear sign-up message
         return true;
+      }
+      else{
+        $("#signupMessage").html("<p>Passwords do not match</p>"); // show user error message
       }
     }
 
@@ -50,11 +56,11 @@ class LandingPage extends Component {
     event.preventDefault();
 
     // get salt for username attempt
-    // $.post("/api/salt", this.state.loginEmail)
-    //   .then(function (res) {
+    $.post("/api/salt", this.state.loginEmail)
+      .then(function (res) {
 
 
-    //   });
+      });
 
 
   }
@@ -64,13 +70,31 @@ class LandingPage extends Component {
     console.log("Submit signup button pressed");
     event.preventDefault();
 
-    // get salt for username attempt
-    // $.post("/api/salt", this.state.loginEmail)
-    //   .then(function (res) {
+    // attempt to add new user to the database 
+    // if username is unique, server will add to database
+    // otherwise, show error to user
+    let newUser = {
+      username: this.state.signupEmail,
+      pass: this.state.pass
+    }
 
 
-    //   });
+    $.post("/api/user", newUser)
+      .then(function (res) {
+        console.log(res);
 
+        if (res === "true") {
+          alert("User created!");
+        
+          window.location.replace("/profile");
+        }
+        else {
+         
+          $(`#signupMessage`).html("Username already taken!");
+        }
+
+
+      });
 
   }
 
@@ -147,12 +171,16 @@ class LandingPage extends Component {
                       value={this.state.signupEmail}
                       onChange={this.handleChange}
                     />
+<<<<<<< HEAD
                     <small className="form-text">We'll never share your email with anyone else.</small>
+=======
+                    <small className="form-text ">We'll never share your email with anyone else.</small>
+>>>>>>> ea33ace052b7a810d88cc10bbd7eb7478b5002ad
                   </div>
                   <div className="form-group">
 
 
-                   {/* ============  Signup: password field ============ */}
+                    {/* ============  Signup: password field ============ */}
                     <label htmlFor="signupPass">Password</label>
                     <input type="password"
                       className="form-control"
@@ -166,7 +194,7 @@ class LandingPage extends Component {
                   </div>
                   <div className="form-group">
 
-                   {/* ============  Signup: password confirm field ============ */}
+                    {/* ============  Signup: password confirm field ============ */}
                     <label htmlFor="signupPassConfirm">Confirm Password</label>
                     <input
                       type="password"
@@ -179,7 +207,7 @@ class LandingPage extends Component {
                     />
                   </div>
                   <div id="signupMessage"></div>
-                  <button type="submit" id="signupSubmit"  disabled={!this.validateSignupForm()} className="btn btn-primary">Submit</button>
+                  <button type="submit" id="signupSubmit" disabled={!this.validateSignupForm()} className="btn btn-primary">Submit</button>
                 </form>
               </div>
 
