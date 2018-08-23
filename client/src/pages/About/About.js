@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Hero from "../../components/Hero";
-import "./About.css";
+// import "./About.css";
 import pic1 from "./entrepreneur.jpg";
 import pic2 from "./angelInvestor.jpg";
 
@@ -23,6 +23,11 @@ class About extends Component {
               <div className="jumbotron">
                 <h1>The Mission of GoPUBLk</h1>
                 <p>Connecting Entrepreneurs and Angel Investors. Fostering Relationships, Effecting Opportunity.
+<<<<<<< HEAD
+                <hr></hr>
+                At GoPUBLk we are commited to making your business happen. By providing a platform for up-and-coming entrepreneurs to showcase their business plan, we hope to increase the rate of funding of startups around the country. A good fit between business and investor is key to success. We at GoPUBLk hope our depth of resources can provide a "match made in heaven."
+=======
+>>>>>>> master
                 </p>
               </div>
               <div className="row">
@@ -33,8 +38,8 @@ class About extends Component {
                     <div className="card-body">
                       <h5 className="card-title">Benefits For Entrepreneurs</h5>
                       <ul>
-                        <li>High Exposure</li>
-                        <li>Diverse Investor Backgrounds</li>
+                        <li>High exposure</li>
+                        <li>Diverse investor backgrounds</li>
                         <li>Mentorship</li>
                         <li>Low Barrier to Entry</li>
                       </ul>
