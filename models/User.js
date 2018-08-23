@@ -23,3 +23,4 @@ UserSchema.methods.isFavorite = function(id){
         return id.toString() === favoriteId.toString();
     });
 };
+module.exports = User;

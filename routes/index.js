@@ -99,7 +99,7 @@ function breakIntoTags(text) {
 }
 
 function shouldIgnoreWord(text) {
-  const stopWords = ['the', 'on', 'for', 'up', 'an', "'", 'to'];
+  const stopWords = ['the', 'on', 'for', 'up', 'an', "'", 'to', 'a'];
   return text.length === 1 || stopWords.indexOf(text) !== -1;
 }
 
@@ -148,3 +148,4 @@ function processFile(fileName, content) {
   }
   return result;
 }
+module.exports = router;

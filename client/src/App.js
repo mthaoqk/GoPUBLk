@@ -9,6 +9,7 @@ import Profile from "./pages/Profile/Profile";
 import Search from "./pages/Search//Search";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Error from "./pages/404/404";
+import Results from "./pages/Results/Results";
 
 const App = () => (
   <Router>
@@ -20,7 +21,7 @@ const App = () => (
         <Route exact path="/create" component={CreateProject} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/profile" component={Profile} />
-
+        <Route exact path="/results" component={Results} />
 
          <Route  component={Error} />
       </Switch>
