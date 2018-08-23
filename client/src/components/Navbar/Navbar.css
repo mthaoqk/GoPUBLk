@@ -9,6 +9,17 @@ nav {
   text-align: center;
   font-family: 'Kosugi', sans-serif;
 }
+
+.navbarRow{
+  flex-direction: row;
+}
+
+.nav-item {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+
 #logo{
   height:50px;
   width:50px;
@@ -23,5 +34,5 @@ a:visited {
 }
 /* mouse over link */
 a:hover {
-  color: #fff100;
+  color: #08415c;
 }

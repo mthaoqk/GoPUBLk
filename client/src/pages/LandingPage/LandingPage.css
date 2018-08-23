@@ -4,10 +4,20 @@ form {
 h1{
     font-family: 'Kosugi', sans-serif;
 }
-.btn-primary {
-    color: #e5222a;
+:disabled {
+    background-color: #08415c;
+}
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
     background-color: white;
     border-color: #e5222a;
+}
+.btn-primary:hover{
+    background-color: #08415c;
+    border-color: #08415c;
+    color: white;
 }
 #LandingJum{
     text-align: center;

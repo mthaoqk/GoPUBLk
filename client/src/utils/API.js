@@ -1,15 +1,23 @@
-// import axios from "axios";
+import axios from "axios";
 
-// Export an object containing methods we'll use for accessing the Dog.Ceo API
+export default {
 
-// export default {
-//   getRandomDog: function() {
-//     return axios.get("https://dog.ceo/api/breeds/image/random");
-//   },
-//   getDogsOfBreed: function(breed) {
-//     return axios.get("https://dog.ceo/api/breed/" + breed + "/images");
-//   },
-//   getBaseBreedsList: function() {
-//     return axios.get("https://dog.ceo/api/breeds/list");
-//   }
-// };
+  getProfile: function() {
+    return axios.get("../routes/api/profiles");
+  },
+
+  getProjects: function() {
+    return axios.get("../routes/api/projects");
+  },
+  
+  
+
+
+
+  // register a user 
+  saveUser: function(User) {
+    return axios.post("/api/users", User);
+  }
+
+};
+

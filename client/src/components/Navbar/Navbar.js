@@ -5,10 +5,10 @@ import "./Navbar.css";
 const Navbar = props => (
   <nav className="navbar navbar-expand-lg">
     <Link className="navbar-brand" to="/">
-      <img id="logo" src="https://s15.postimg.cc/je0lkp23v/Transparent_Logo_Tre.png" />
+      <img id="logo" src="https://s15.postimg.cc/je0lkp23v/Transparent_Logo_Tre.png" alt="MyLogo" />
     </Link>
     <div>
-      <ul className="navbar-nav">
+      <ul       className="navbar-nav navbarRow" >
 
         <li
           className={
@@ -19,18 +19,6 @@ const Navbar = props => (
         >
           <Link to="/" className="nav-link">
             Sign-In
-          </Link>
-        </li>
-
-        <li
-          className={
-            window.location.pathname === "/about"
-              ? "nav-item active"
-              : "nav-item"
-          }
-        >
-          <Link to="/about" className="nav-link">
-            About
           </Link>
         </li>
 
@@ -57,7 +45,7 @@ const Navbar = props => (
             Search
           </Link>
         </li>
-        
+
         <li
           className={
             window.location.pathname === "profile"
@@ -70,6 +58,18 @@ const Navbar = props => (
           </Link>
         </li>
 
+        <li
+          className={
+            window.location.pathname === "/about"
+              ? "nav-item active"
+              : "nav-item"
+          }
+        >
+          <Link to="/about" className="nav-link">
+            About
+          </Link>
+        </li>
+        
       </ul>
     </div>
   </nav>
