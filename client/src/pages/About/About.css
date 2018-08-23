@@ -1,46 +1,44 @@
 form {
     font-family: 'Kosugi Maru', sans-serif;
 }
-h1{
+
+h1 {
     font-family: 'Kosugi', sans-serif;
-    
 }
-h5{
+
+h5 {
     font-family: 'Kosugi', sans-serif;
-    
 }
-/* .btn-primary {
+.btn-primary {
     color: #e5222a;
     background-color: white;
     border-color: #e5222a;
 
-} */
+}
 
 .container {
     margin-top: 30px;
 }
 
-
-
-
-
-
-
-.card-img-top {
-    overflow: hidden;
-    align-self: center;
-    width: 300px;
-    height: 300px;
+#aboutJumb {
+    box-shadow: 2px 2px 5px #80755C;
+    background-color: #08415c;
+    color: #F5F5F5;
 }
-
-
-
-
-
-a.forgottonPass:link {
-    color: white;
+#aboutImage {
+    height: 34rem;
+    width: 16rem;
+    box-shadow: 2px 2px 5px #80755C;
+    background-color: #08415c;
+    color: #F5F5F5;
     margin-bottom: 30px;
 }
+
+img {
+    height: 200px;
+    width: 200px;
+}
+
 a#linkProj:link {
     color: #e5222a;
 }
@@ -54,5 +52,5 @@ a#linkProj:visited {
 /* mouse over link */
 
 a#linkProj:hover {
-    color: white;
+    color: #F5F5F5;
 }

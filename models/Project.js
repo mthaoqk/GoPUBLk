@@ -2,6 +2,9 @@ var mongoose = require('mongoose');
 var uniqueValidator = require('mongoose-unique-validator');
 var slug = require('slug');
 var User = mongoose.model('User');
+
+
+
 var ProjectSchema = new mongoose.Schema({
     slug: {type: String, lowercase: true, unique: true},
     title: String,
@@ -41,7 +44,7 @@ ProjectSchema.methods.toJSONFor = function(user){
         author: this.author.toProfileJSONFor(user)
     };
 };
-mongoose.model('Project', ProjectSchema);
+const Project = mongoose.model('Project', ProjectSchema);
 
 ProjectSchema.methods.updateFavoriteCount = function(){
     var project = this;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Hero from "../../components/Hero";
-// import "./About.css";
+import "./About.css";
 import pic1 from "./entrepreneur.jpg";
 import pic2 from "./angelInvestor.jpg";
 
@@ -20,7 +20,7 @@ class About extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <div className="jumbotron">
+              <div id="aboutJumb" className="jumbotron">
                 <h1>The Mission of GoPUBLk</h1>
                 <p>Connecting Entrepreneurs and Angel Investors. Fostering Relationships, Effecting Opportunity.
                 <hr></hr>
@@ -29,8 +29,7 @@ class About extends Component {
               </div>
               <div className="row">
                 <div className="col-md-6">
-                  <div className="card" id="aboutImage"
-                  >
+                  <div className="card" id="aboutImage">
                     <img className="card-img-top" src={pic1} alt="En"></img>
                     <div className="card-body">
                       <h5 className="card-title">Benefits For Entrepreneurs</h5>
