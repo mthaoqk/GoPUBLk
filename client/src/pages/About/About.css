@@ -9,11 +9,12 @@ h5{
     font-family: 'Kosugi', sans-serif;
     
 }
-.btn-primary {
+/* .btn-primary {
     color: #e5222a;
     background-color: white;
     border-color: #e5222a;
-}
+
+} */
 
 .container {
     margin-top: 30px;
@@ -25,7 +26,12 @@ h5{
 
 
 
-
+.card-img-top {
+    overflow: hidden;
+    align-self: center;
+    width: 300px;
+    height: 300px;
+}
 
 
 

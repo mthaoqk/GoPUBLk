@@ -1,9 +1,36 @@
-import React, { Component } from "react";
+import React from "react";
 import Hero from "../../components/Hero";
 import "./Profile.css";
 import ProfileNavBar from "../../components/ProfileNavBar/"
+import API from "../../utils/API";
+
 
 class Profile extends Component {
+  state = {
+    user: "",
+    projects: [],
+    profile: ""
+
+  };
+  componentDidMount() {
+    this.loadProfile();
+    this.loadProjects();
+  }
+
+  loadProfile = () => {
+    API.getProfile()
+      .then(res =>
+        this.setState({ user: "", profile: "" })
+      )
+      .catch(err => console.log(err));
+  }
+  loadProjects = () => {
+    API.getProjects()
+      .then(res =>
+        this.setState({ projects: [] })
+      )
+      .catch(err => console.log(err));
+  }
   render() {
     return (
       <div>
@@ -15,20 +42,50 @@ class Profile extends Component {
           <div className="row">
             <div className="col-md-12">
               <div className="jumbotron">
-                <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out.
-                   Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide...
-                   and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that
-                    killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man.
-        </p>
+                <h5>Professional Profile</h5>
 
               </div>
               <ProfileNavBar />
             </div>
           </div>
+          <div className="row">
+            <div className="col-md-12">
+              <div class="card">
+                <img class="card-img-top" src={this.state.profile.image} alt="Card image cap"></img>
+                <div class="card-body">
+                  <h5 class="card-title"></h5>
+                  <p>
+                    {this.state.profile.bio}
+                    </p>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+          <h5>User's Projects</h5>
+          <hr></hr>
+          <List>
+            {this.state.projects.map(project => (
+              <ListItem key={project._id}>
+                <Link to={"/projects/" + project._id}>
+                  <strong>
+                    {project.title}
+                  </strong>
+                </Link>
+              </ListItem>
+            ))}
+          </List>
         </div>
       </div>
+
+
+
+
+
+
     )
   }
 }
+
 
 export default Profile;
