@@ -1,8 +1,7 @@
 import axios from "axios";
 
-// Export an object containing methods we'll use for accessing the Dog.Ceo API
-
 export default {
+<<<<<<< HEAD
   getProfile: function() {
     return axios.get("../routes/api/profiles");
   },
@@ -12,4 +11,12 @@ export default {
   },
   
   
+=======
+
+
+  // register a user 
+  saveUser: function(User) {
+    return axios.post("/api/users", User);
+  }
+>>>>>>> master
 };
