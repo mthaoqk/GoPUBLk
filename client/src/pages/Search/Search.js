@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import Hero from "../../components/Hero";
 import "./Search.css";
 
-class Search extends React.Component {
+
+class Search extends Component {
   constructor(props) {
     super(props);
     this.state = { value: '' };
@@ -26,19 +27,17 @@ class Search extends React.Component {
   render() {
     return (
       <div>
-      <Hero backgroundImage="https://s8.postimg.cc/aqr93z6lx/test.jpg">
-        <h1>GoPUBLk</h1>
-      </Hero>
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Search for Projects:
+        <Hero backgroundImage="https://s8.postimg.cc/aqr93z6lx/test.jpg">
+          <h1>GoPUBLk</h1>
+        </Hero>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Search for Projects:
           <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-      
-    </div>
-    
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
   )
   }
 }
