@@ -20,14 +20,11 @@ class About extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <div className="jumbotron">
+              <div id="aboutJumb" className="jumbotron">
                 <h1>The Mission of GoPUBLk</h1>
                 <p>Connecting Entrepreneurs and Angel Investors. Fostering Relationships, Effecting Opportunity.
-<<<<<<< HEAD
                 <hr></hr>
                 At GoPUBLk we are commited to making your business happen. By providing a platform for up-and-coming entrepreneurs to showcase their business plan, we hope to increase the rate of funding of startups around the country. A good fit between business and investor is key to success. We at GoPUBLk hope our depth of resources can provide a "match made in heaven."
-=======
->>>>>>> master
                 </p>
               </div>
               <div className="row">
