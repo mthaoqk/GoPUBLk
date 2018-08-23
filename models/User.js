@@ -60,3 +60,4 @@ UserSchema.methods.comparePassword = function(candidatePassword, hash, callback)
 const User=mongoose.model("User",UserSchema);
 
 module.exports= User;
+
