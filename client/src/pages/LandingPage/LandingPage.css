@@ -11,33 +11,33 @@ h1{
 .btn-primary:active,
 .btn-primary:visited,
 .btn-primary:focus {
-    background-color: white;
+    background-color: #F5F5F5;
     border-color: #e5222a;
 }
 .btn-primary:hover{
-    background-color: #08415c;
+    background-color: #e5222a;
     border-color: #08415c;
-    color: white;
+    color: #F5F5F5;
 }
 #LandingJum{
     text-align: center;
     margin-top: 30px;
-    background-color: #e5222a;
-    color: white;
+    background-color: #08415c;
+    color: #F5F5F5;
     box-shadow:2px 2px 5px #80755C;
 }
 a.forgottonPass:link {
-    color: white;
+    color: #F5F5F5;
 }
 
 /* visited link */
 
 a.forgottonPass:visited {
-    color: white;
+    color: #F5F5F5;
 }
 
 /* mouse over link */
 
 a.forgottonPass:hover {
-    color: white;
+    color: #F5F5F5;
 }

@@ -84,9 +84,8 @@ class CreateProject extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <div id="CreateProj" className="jumbotron">
-<<<<<<< HEAD
-              <h1 id="CProjectTitle">Create a project</h1></div>
+            <div id="CreateProjJumbotron" className="jumbotron">
+              <h1 id="CProjectTitle">Create a project</h1>
               <form>
               <Input
                 value={this.state.title}
@@ -126,7 +125,6 @@ class CreateProject extends Component {
                 Submit Project
               </FormBtn>
               </form>
-=======
               <h1 id="CProjectTitle">Create a project</h1>
               <form  onSubmit={this.handleCreateProjcectSubmit}>
                 <div className="form-group">
@@ -147,13 +145,11 @@ class CreateProject extends Component {
                 </div>
                 <button type="submit" id="ProjectSubmit" className="btn btn-primary">Submit</button>
               </form>
-              
->>>>>>> master
             </div>
           </div>
         </div>
       </div>
-    
+    </div>
     )
   }
 }

@@ -5,7 +5,7 @@ import "./ProfileNavBar.css";
 const ProfileNavBar = props => (
   <nav className="navbar navbar-expand-lg">
     <div>
-      <ul className="navbar-nav">
+      <ul className="navbar-nav navbarRow">
 
         <li
           className={

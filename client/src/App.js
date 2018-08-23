@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./pages/About/About";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -8,6 +8,7 @@ import CreateProject from "./pages/CreateProject/CreateProject";
 import Profile from "./pages/Profile/Profile";
 import Search from "./pages/Search//Search";
 import LandingPage from "./pages/LandingPage/LandingPage";
+import ProjectDescription from "./pages/ProjectDesc/ProjectDesc";
 import Error from "./pages/404/404";
 
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
         <Route exact path="/create" component={CreateProject} />
         <Route exact path="/search" component={Search} />
         <Route exact path="/profile" component={Profile} />
+        <Route exact path="/projectDes" component={ProjectDescription} />
 
 
          <Route  component={Error} />
