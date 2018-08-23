@@ -1,5 +1,5 @@
 
-import React, { Component} from "react";
+import React, { Component } from "react";
 import Hero from "../../components/Hero";
 import "./Profile.css";
 import ProfileNavBar from "../../components/ProfileNavBar/"
@@ -44,7 +44,7 @@ class Profile extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <div className="jumbotron">
+              <div id="profileJumb" className="jumbotron">
                 <h5>Professional Profile</h5>
 
               </div>
@@ -54,13 +54,13 @@ class Profile extends Component {
           <div className="row">
             <div className="col-md-12">
               <div class="card">
-                <img class="card-img-top" src={this.state.profile.image} alt="Card image cap"></img>
+                <img class="card-img-top" src={this.state.profile.image}></img>
                 <div class="card-body">
                   <h5 class="card-title">Bio</h5>
                   <p>
                     {this.state.profile.bio}
-                    </p>
-                
+                  </p>
+
                 </div>
               </div>
             </div>

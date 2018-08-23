@@ -23,6 +23,7 @@ const App = () => (
         <Route exact path="/search" component={Search} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/results" component={Results} />
+        <Route exact path="/projectDesc" component={ProjectDescription} />
 
          <Route  component={Error} />
       </Switch>

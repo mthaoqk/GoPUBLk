@@ -16,9 +16,10 @@ class CreateProject extends Component {
 
 
   };
+  
   componentDidMount() {
-    this.loadProfile();
-    this.loadProjects();
+    // this.loadProfile();
+    // this.loadProjects();
   }
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -85,7 +86,7 @@ class CreateProject extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <div id="CreateProj" className="jumbotron">
+            <div id="CreateProjJumbotron" className="jumbotron">
               <h1 id="CProjectTitle">Create a project</h1></div>
             <form>
               <Input

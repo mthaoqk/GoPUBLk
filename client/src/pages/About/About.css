@@ -20,33 +20,13 @@ h5 {
     margin-top: 30px;
 }
 
-
-
-
-
-
-
-.card-img-top {
-    overflow: hidden;
-    align-self: center;
-    width: 300px;
-    height: 300px;
-}
-
-
-#aboutImage{
-    width: 18rem;
-    box-shadow:2px 2px 5px #80755C;
-    background-color: #e5222a;
-    color: white;
-}
 #aboutJumb {
     box-shadow: 2px 2px 5px #80755C;
     background-color: #08415c;
     color: #F5F5F5;
 }
 #aboutImage {
-    height: 31rem;
+    height: 34rem;
     width: 16rem;
     box-shadow: 2px 2px 5px #80755C;
     background-color: #08415c;
