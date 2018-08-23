@@ -53,5 +53,4 @@ ProjectSchema.methods.updateFavoriteCount = function(){
         return project.save();
     });
 };
-
-module.exports= Project;
+module.exports = Project;

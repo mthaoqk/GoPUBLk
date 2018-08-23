@@ -2,6 +2,8 @@ import React from "react";
 import Hero from "../../components/Hero";
 import "./Profile.css";
 import ProfileNavBar from "../../components/ProfileNavBar/"
+import { List, ListItem } from "../../components/List";
+import { Link } from "react-router-dom";
 import API from "../../utils/API";
 
 
