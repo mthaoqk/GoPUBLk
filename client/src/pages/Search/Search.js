@@ -1,5 +1,4 @@
 import React from "react";
-import { Redirect } from 'react-router-dom';
 import Hero from "../../components/Hero";
 import "./Search.css";
 
@@ -18,6 +17,7 @@ class Search extends React.Component {
 
   handleSubmit(event) {
     alert('Searching for: ' + this.state.value);
+    window.location.replace("/Results");
     event.preventDefault();
 
   }
@@ -34,7 +34,7 @@ class Search extends React.Component {
           Search for Projects:
           <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
-        <input type="submit" value="Submit" onClick={() => this.Redirect("/Results/Results.js") />
+        <input type="submit" value="Submit" />
       </form>
       
     </div>

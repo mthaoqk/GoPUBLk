@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../../components/Hero";
 import "./Results.css";
+import "../Search/Search.js";
 
 
 const Results = () => (
@@ -16,7 +17,6 @@ const Results = () => (
                 <div class="col-s-12">
                     <div>
                         <lu>
-
                             Title:<li name="title"></li>
                             Tags: <li name="tag"></li>
                             Author: <li name="author"></li>
