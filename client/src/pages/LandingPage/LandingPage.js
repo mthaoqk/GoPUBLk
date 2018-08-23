@@ -64,7 +64,7 @@ class LandingPage extends Component {
     $.post("/login", loginInfo)
       .then(function (res) {
 
-
+        console.log(res.body);
       });
 
 
@@ -84,13 +84,12 @@ class LandingPage extends Component {
     }
 
 
-    $.post("/signup", newUser)
+    $.post("/api/users", newUser)
       .then(function (res) {
         console.log(res);
 
         if (res === "true") {
           alert("User created!");
-        
           window.location.replace("/profile");
         }
         else {
@@ -102,11 +101,6 @@ class LandingPage extends Component {
       });
 
   }
-
-
-
-
-
 
 
   render() {
@@ -164,7 +158,7 @@ class LandingPage extends Component {
 
               <div className="col-sm">
                 <h1>Sign-up</h1>
-                <form>
+                <form onSubmit={this.handleSignupSubmit} >
                   <div className="form-group">
                     <label htmlFor="signupEmail">Email address</label>
                     {/* ============  Signup: Username/email field ============ */}
