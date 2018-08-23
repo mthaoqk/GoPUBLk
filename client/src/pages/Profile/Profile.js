@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { Component} from "react";
 import Hero from "../../components/Hero";
 import "./Profile.css";
 import ProfileNavBar from "../../components/ProfileNavBar/"
@@ -55,7 +56,7 @@ class Profile extends Component {
               <div class="card">
                 <img class="card-img-top" src={this.state.profile.image} alt="Card image cap"></img>
                 <div class="card-body">
-                  <h5 class="card-title"></h5>
+                  <h5 class="card-title">Bio</h5>
                   <p>
                     {this.state.profile.bio}
                     </p>
