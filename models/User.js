@@ -3,7 +3,8 @@ var bcrypt= require("bcryptjs");
 
 
 var UserSchema = new mongoose.Schema({
-    username: {type: String, lowercase: true, required: [true, "can't be blank."], unique: true, index: true},
+   // username: {type: String, lowercase: true, required: [true, "can't be blank."], unique: true, index: true},
+    username: {type: String, lowercase: true, unique: true, index: true},
     email: {type: String, lowercase: true, required: [true, "can't be blank."], unique: true, index: true},
     bio: String,
     image: String,
