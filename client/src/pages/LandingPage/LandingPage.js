@@ -3,6 +3,7 @@ import $ from 'jquery';
 // import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import Hero from "../../components/Hero";
 import "./LandingPage.css";
+import API from "../../utils/API";
 
 // const LandingPage
 class LandingPage extends Component {
@@ -80,25 +81,33 @@ class LandingPage extends Component {
     // otherwise, show error to user
     let newUser = {
       username: this.state.signupEmail,
+      email : "null@nul.com",
       pass: this.state.pass
     }
 
+    
+      API.saveUser(newUser)
+        .then(res =>
+          console.log(res)
+        )
+        .catch(err => console.log(err));
+    
 
-    $.post("/api/users", newUser)
-      .then(function (res) {
-        console.log(res);
+    // $.post("/api/users", newUser)
+    //   .then(function (res) {
+    //     console.log(res);
 
-        if (res === "true") {
-          alert("User created!");
-          window.location.replace("/profile");
-        }
-        else {
+    //     if (res === "true") {
+    //       alert("User created!");
+    //       window.location.replace("/profile");
+    //     }
+    //     else {
          
-          $(`#signupMessage`).html("Username already taken!");
-        }
+    //       $(`#signupMessage`).html("Username already taken!");
+    //     }
 
 
-      });
+      // });
 
   }
 
