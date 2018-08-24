@@ -14,6 +14,7 @@ class Search extends Component {
 
   handleChange(event) {
     this.setState({ value: event.target.value });
+
   }
 
   handleSubmit(event) {
@@ -27,7 +28,7 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <Hero backgroundImage="https://s8.postimg.cc/aqr93z6lx/test.jpg">
+        <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
           <h1>GoPUBLk</h1>
         </Hero>
         <form onSubmit={this.handleSubmit}>
@@ -38,7 +39,8 @@ class Search extends Component {
           <input type="submit" value="Submit" />
         </form>
       </div>
-  )
+    )
   }
 }
+
 export default Search;
