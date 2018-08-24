@@ -10,3 +10,4 @@ export const List = ({ children }) => {
     </div>
   );
 };
+export default List;

@@ -9,3 +9,7 @@
 .footer {
     position: relative;
 }
+.form-group {
+    border-color: black;
+    border-radius: 2px;
+}

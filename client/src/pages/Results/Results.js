@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Hero from "../../components/Hero";
 import API from "../../utils/API";
 import "./Results.css";
+import List from "../../components/List/List"
 
 
 class Results extends Component {
@@ -9,8 +10,9 @@ class Results extends Component {
         Title: "",
         tagList: "",
         Author: "",
-
-        Description: "",
+        description: "",
+        body: "",
+        dateCreated: "",
         financing: "",
     };
     componentDidMount() {
@@ -26,12 +28,13 @@ class Results extends Component {
     }
     renderProjects = () => {
         return this.state.projects.map(project => (
-            <Results
+            <List
                 _id={project._id}
                 key={project._id}
-                title={project.headline}
-                dateCreated={project.pub_date}
-                dateUpdated={project.update_date}
+                title={project.title}
+                dateCreated={project.dateCreated}
+                author={project.Author}
+                // dateUpdated={project.update_date}
                 tags={project.tagList}
                 decription={project.decription}
                 body={project.body}
@@ -45,8 +48,8 @@ class Results extends Component {
         this.setState({ topic: event.target.value });
     }
 
-    handleStartDateChange = (event) => {
-        this.setState({ startDate: event.target.value });
+    handleDateCreatedChange = (event) => {
+        this.setState({ dateCreated: event.target.value });
     }
 
     handleUpdateChange = (event) => {
@@ -56,10 +59,12 @@ class Results extends Component {
         event.preventDefault();
         console.log("Getting Projects");
         console.log("Topic: ", this.state.topic);
-        console.log("Start Date: ", this.state.startDate);
-        console.log("Update Date: ", this.state.updateDate);
+        console.log("Author: ", this.state.Author);
+        console.log("Creation Date: ", this.state.dateCreated);
+        // console.log("Update Date: ", this.state.updateDate);
         console.log("Tags: ", this.state.tagList);
         console.log("Description: ", this.state.description);
+        console.log("Body: ", this.state.body);
         API.searchProjects(this.state.topic, this.state.author, this.state.tagList)
             .then((res) => {
                 this.setState({ Projects: res.data.response.docs });
@@ -67,35 +72,35 @@ class Results extends Component {
             });
     }
 
-    render() {
-        return (
+        render() {
+            return (
 
-          <div>
-        <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
-            <h1>GoPUBLk</h1>
-        </Hero>
-                <div className='container'>
-                    <div>
-                        <h2 className="color-a">Search Results</h2>
-                    </div>
-                    <div classNanme="form-group row">
-                        <div className="col-s-12">
-                            <div>
-
-                                <Results
-                                    handleTopicChange={this.handleTopicChange}
-                                    handleStartDateChange={this.handleStartDateChange}
-                                    handleUpdateChange={this.handleUpdateChange}
-                                    handleFormSubmit={this.handleFormSubmit}
-                                    renderProjects={this.renderProjects}
-                                />
+                <div>
+                    <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
+                        <h1>GoPUBLk</h1>
+                    </Hero>
+                    <div className='container'>
+                        <div>
+                            <h2 className="color-a">Search Results</h2>
+                        </div>
+                        <div classNanme="form-group row">
+                            <div className="col-s-12">
+                                <div>
+                                    <List
+                                        // handleTopicChange={this.handleTopicChange}
+                                        // handleDateCreatedChange={this.handleStartDateChange}
+                                        // handleUpdateChange={this.handleUpdateChange}
+                                        // handleFormSubmit={this.handleFormSubmit}
+                                        renderProjects={this.renderProjects}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        );
+            );
+        }
     }
-}
+
 
 export default Results;
