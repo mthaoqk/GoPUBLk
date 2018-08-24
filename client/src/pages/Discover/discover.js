@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
 import API from "../../utils/API";
-import "./tests.css";
+import "./discover.css";
 import "../Search/Search.js";
 import ListItem from "../../components/Listitems";
 
 
-class Tests extends Component {
+class Discover extends Component {
     state = {
         Title: "",
         tagList: "",
@@ -40,6 +40,7 @@ class Tests extends Component {
                       <ListItem
                         title={projects.title}
                         description={projects.description} 
+                        financing={projects.financing}
                         key={projects._id}
                         favorite={projects.favorite}
                         slug={projects.slug}
@@ -54,4 +55,4 @@ class Tests extends Component {
       }
 }
 
-export default Tests;
+export default Discover;
