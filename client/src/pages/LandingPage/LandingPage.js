@@ -46,27 +46,34 @@ class LandingPage extends Component {
     return false;
   }
 
-  handleChange = event => {
+  handleInputChange = event => {
+    const { id, value } = event.target;
     this.setState({
-      [event.target.id]: event.target.value
+      [id]: value
     });
-  }
+  };
 
   handleLoginSubmit = event => {
     console.log("Submit Login button pressed");
     event.preventDefault();
 
-    let loginInfo = {
-      username: this.state.signupEmail,
-      pass: this.state.pass
+    let userLogin = {
+      username: this.state.loginEmail,
+      password: this.state.loginpass
     }
 
-    // get salt for username attempt
-    $.post("/login", loginInfo)
-      .then(function (res) {
+    console.log("user info ",userLogin);
+      
+    
+    API.checkUser(userLogin)
+        .then(function(res,req){
 
-        console.log(res.body);
-      });
+        console.log(res.data._id);
+        window.location.replace("/profile");
+        
+        })         
+        
+        .catch(err => console.log(err));
 
 
   }
@@ -81,8 +88,8 @@ class LandingPage extends Component {
     // otherwise, show error to user
     let newUser = {
       username: this.state.signupEmail,
-      email : "null@nul.com",
-      pass: this.state.pass
+      //email : "null333@nul.com",
+      password: this.state.signupPass,
     }
 
     
@@ -91,24 +98,6 @@ class LandingPage extends Component {
           console.log(res)
         )
         .catch(err => console.log(err));
-    
-
-    // $.post("/api/users", newUser)
-    //   .then(function (res) {
-    //     console.log(res);
-
-    //     if (res === "true") {
-    //       alert("User created!");
-    //       window.location.replace("/profile");
-    //     }
-    //     else {
-         
-    //       $(`#signupMessage`).html("Username already taken!");
-    //     }
-
-
-      // });
-
   }
 
 
@@ -136,7 +125,7 @@ class LandingPage extends Component {
                       placeholder="Enter email"
 
                       value={this.state.loginEmail}
-                      onChange={this.handleChange}
+                      onChange={this.handleInputChange}
 
                     />
 
@@ -151,7 +140,7 @@ class LandingPage extends Component {
                       placeholder="Password"
 
                       value={this.state.loginpass}
-                      onChange={this.handleChange}
+                      onChange={this.handleInputChange}
                     />
                   </div>
                   <div className="form-group form-check">
@@ -177,7 +166,7 @@ class LandingPage extends Component {
                       aria-describedby="emailHelp"
                       placeholder="Enter email"
                       value={this.state.signupEmail}
-                      onChange={this.handleChange}
+                      onChange={this.handleInputChange}
                     />
                     <small className="form-text ">We'll never share your email with anyone else.</small>
                   </div>
@@ -192,7 +181,7 @@ class LandingPage extends Component {
                       placeholder="Password"
 
                       value={this.state.signupPass}
-                      onChange={this.handleChange}
+                      onChange={this.handleInputChange}
 
                     />
                   </div>
@@ -207,7 +196,7 @@ class LandingPage extends Component {
                       placeholder="Password"
 
                       value={this.state.signupPassconfirm}
-                      onChange={this.handleChange}
+                      onChange={this.handleInputChange}
                     />
                   </div>
                   <div id="signupMessage"></div>

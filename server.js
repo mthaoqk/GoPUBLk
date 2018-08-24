@@ -5,6 +5,9 @@ const PORT = process.env.PORT || 3001;
 const mongoose = require("mongoose");
 const routes = require("./routing");
 const app = express();
+var session = require('express-session');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,6 +20,15 @@ if (process.env.NODE_ENV === "production") {
 // Define API routes here
 // Add routes, both API and view
 
+app.use(session({
+  secret: 'frufgnrvnrinrifr',
+  saveUninitialized:true,
+  resave:true
+}));
+
+// Passport init
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(routes);
 
