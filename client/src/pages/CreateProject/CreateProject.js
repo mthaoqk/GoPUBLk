@@ -9,7 +9,7 @@ class CreateProject extends Component {
 
   state = {
     title: "",
-    decription: "",
+    description: "",
     financing: "",
     body: "",
     tags: "",
@@ -17,10 +17,6 @@ class CreateProject extends Component {
 
   };
   
-  componentDidMount() {
-    // this.loadProfile();
-    // this.loadProjects();
-  }
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -30,11 +26,15 @@ class CreateProject extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
+    console.log("Click")
+    if (this.state.title) {
       API.createProject({
         title: this.state.title,
         description: this.state.description,
-        tags: this.state.tags
+        financing: this.state.financing,
+        body: this.state.body,
+        tags: this.state.tags,
+        slug : "1233",
       })
 
         .catch(err => console.log(err));
@@ -50,31 +50,10 @@ class CreateProject extends Component {
     };
   }
 
-  handleChange = event => {
-    this.setState({
-      [event.target.id]: event.target.value
-    });
-  }
-
-  handleCreateProjcectSubmit = event => {
-    console.log("Create project button pressed");
-    event.preventDefault();
-
-    let projectinfo = {
-
-    }
-
-    // get salt for username attempt
-    $.post("/newproject", projectinfo)
-      .then(function (res) {
-
-        console.log(res.body);
-      });
-
-
-  }
-
-
+  handleInputChange = event => {
+    let { name, value } = event.target;
+    this.setState({[name] : value})
+  };
 
 
   render() {
@@ -110,7 +89,7 @@ class CreateProject extends Component {
               <Input
                 value={this.state.body}
                 onChange={this.handleInputChange}
-                name="business plan"
+                name="body"
                 placeholder="Insert Comprehensive Business Plan Here"
               />
 
@@ -136,3 +115,6 @@ class CreateProject extends Component {
 }
 
 export default CreateProject;
+
+
+
