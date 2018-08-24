@@ -2,23 +2,25 @@ import axios from "axios";
 
 export default {
   getProfile: function() {
-    return axios.get("../routes/api/profiles");
+    return axios.get("/api/profiles");
   },
 
   getProjects: function() {
-    return axios.get("../routes/api/projects");
+    return axios.get("/api/projects");
   },
 
-
-  createProject: function() {
-    return axios.post("../routes/api/projects");
+  createProject: function(project) {
+    return axios.post("api/projects",project);
   },
   
   // register a user 
   saveUser: function(User) {
-    return axios.post("/api/users", User);
+    return axios.post("/api/users/register", User);
+  },
+
+  checkUser:function(User) {
+    return axios.post("/api/users/login",User);
   }
-  
 
 };
 

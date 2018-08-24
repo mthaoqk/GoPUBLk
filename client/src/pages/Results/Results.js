@@ -5,6 +5,7 @@ import "./Results.css";
 import List from "../../components/List/List"
 
 
+
 class Results extends Component {
     state = {
         Title: "",
@@ -14,6 +15,7 @@ class Results extends Component {
         body: "",
         dateCreated: "",
         financing: "",
+
     };
     componentDidMount() {
         this.loadProjects();
@@ -72,35 +74,34 @@ class Results extends Component {
             });
     }
 
-        render() {
-            return (
+    render() {
+        return (
 
-                <div>
-                    <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
-                        <h1>GoPUBLk</h1>
-                    </Hero>
-                    <div className='container'>
-                        <div>
-                            <h2 className="color-a">Search Results</h2>
-                        </div>
-                        <div classNanme="form-group row">
-                            <div className="col-s-12">
-                                <div>
-                                    <List
-                                        // handleTopicChange={this.handleTopicChange}
-                                        // handleDateCreatedChange={this.handleStartDateChange}
-                                        // handleUpdateChange={this.handleUpdateChange}
-                                        // handleFormSubmit={this.handleFormSubmit}
-                                        renderProjects={this.renderProjects}
-                                    />
-                                </div>
+            <div>
+                <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
+                    <h1>GoPUBLk</h1>
+                </Hero>
+                <div className='container'>
+                    <div>
+                        <h2 className="color-a">Search Results</h2>
+                    </div>
+                    <div classNanme="form-group row">
+                        <div className="col-s-12">
+                            <div>
+                                <List
+                                    // handleTopicChange={this.handleTopicChange}
+                                    // handleDateCreatedChange={this.handleStartDateChange}
+                                    // handleUpdateChange={this.handleUpdateChange}
+                                    // handleFormSubmit={this.handleFormSubmit}
+                                    renderProjects={this.renderProjects}
+                                />
                             </div>
                         </div>
                     </div>
                 </div>
-            );
-        }
+            </div>
+        );
     }
-
+}
 
 export default Results;

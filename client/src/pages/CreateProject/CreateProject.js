@@ -9,7 +9,7 @@ class CreateProject extends Component {
 
   state = {
     title: "",
-    decription: "",
+    description: "",
     financing: "",
     body: "",
     tags: "",
@@ -17,10 +17,6 @@ class CreateProject extends Component {
 
   };
   
-  componentDidMount() {
-    // this.loadProfile();
-    // this.loadProjects();
-  }
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -30,13 +26,15 @@ class CreateProject extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
+    console.log("Click")
+    if (this.state.title) {
       API.createProject({
         title: this.state.title,
         description: this.state.description,
         financing: this.state.financing,
         body: this.state.body,
         tags: this.state.tags,
+        slug : "1233",
       })
 
         .catch(err => console.log(err));
@@ -44,11 +42,23 @@ class CreateProject extends Component {
   };
 
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+
+    };
+  }
+
+  handleInputChange = event => {
+    let { name, value } = event.target;
+    this.setState({[name] : value})
+  };
 
 
   render() {
     return (<div>
-      <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
+      <Hero backgroundImage="https://s8.postimg.cc/aqr93z6lx/test.jpg">
         <h1>GoPUBLk</h1>
       </Hero>
 
@@ -75,12 +85,11 @@ class CreateProject extends Component {
                 onChange={this.handleInputChange}
                 name="financing"
                 placeholder="Financial Need/Goal"
-                
               />
               <Input
                 value={this.state.body}
                 onChange={this.handleInputChange}
-                name="business plan"
+                name="body"
                 placeholder="Insert Comprehensive Business Plan Here"
               />
 
@@ -106,3 +115,6 @@ class CreateProject extends Component {
 }
 
 export default CreateProject;
+
+
+

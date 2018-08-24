@@ -9,23 +9,23 @@ const ProfileNavBar = props => (
 
         <li
           className={
-            window.location.pathname === "/myprojects"
+            window.location.pathname === "/"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/myProjects" className="nav-link">
+          <Link to="/" className="nav-link">
             My Projects
           </Link>
         </li>
         <li
           className={
-            window.location.pathname === "/myInvestments"
+            window.location.pathname === "/"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/myInvestments" className="nav-link">
+          <Link to="/" className="nav-link">
             My Investments
           </Link>
         </li>
@@ -36,42 +36,30 @@ const ProfileNavBar = props => (
               : "nav-item"
           }
         >
-          <Link to="/favorites" className="nav-link">
-            Favorite
+          <Link to="/" className="nav-link">
+            Favorite Projects
           </Link>
         </li>
         <li
           className={
-            window.location.pathname === "/myOffers"
+            window.location.pathname === "/"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/myOffers" className="nav-link">
+          <Link to="/" className="nav-link">
             My Offers
           </Link>
         </li>
         <li
           className={
-            window.location.pathname === "/Offers"
+            window.location.pathname === "/"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/Offers" className="nav-link">
+          <Link to="/" className="nav-link">
            Offers
-          </Link>
-        </li>
-
-          <li
-          className={
-            window.location.pathname === "/Profile"
-              ? "nav-item active"
-              : "nav-item"
-          }
-        >
-          <Link to="/profile" className="nav-link">
-           Profile
           </Link>
         </li>
 

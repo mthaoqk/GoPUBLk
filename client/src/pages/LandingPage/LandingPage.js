@@ -17,7 +17,7 @@ class LandingPage extends Component {
 
       signupEmail: "",
       signupPass: "",
-      signupPassconfirm: ""
+      signupPassconfirm: "",
     };
   }
 
@@ -46,30 +46,44 @@ class LandingPage extends Component {
     return false;
   }
 
-  handleChange = event => {
-    this.setState({
-      [event.target.id]: event.target.value
-    });
-  }
+
+  // handleChange = event => {
+  //   this.setState({
+  //     [event.target.id]: event.target.value
+  //   });
+  // }
+
+  // ==================== code added =========================== //
+  handleInputChange = event => {
+    let { id, value } = event.target;
+    this.setState({[id] : value})
+  };
+  // ========================= code added Edison ======================//
 
   handleLoginSubmit = event => {
     console.log("Submit Login button pressed");
     event.preventDefault();
+    
+    console.log("boolean : ",this.validateLoginForm());
 
-    let loginInfo = {
-      username: this.state.signupEmail,
-      pass: this.state.pass
-    }
+    if (this.validateLoginForm()){
 
-    // get salt for username attempt
-    $.post("/login", loginInfo)
-      .then(function (res) {
+       let userLogin = {
+            username: this.state.loginEmail,
+            password: this.state.loginpass
+          }
+      console.log(userLogin); 
 
-        console.log(res.body);
-      });
+      API.checkUser(userLogin)
+      .then(function(res) {   
+        console.log(res.data._id);
+        window.location.replace("/profile");
+      })           
+      .catch(err => console.log(err));
+    } // end if
 
-
-  }
+     
+  } // end HandleSubmit
 
 
   handleSignupSubmit = event => {
@@ -79,43 +93,41 @@ class LandingPage extends Component {
     // attempt to add new user to the database 
     // if username is unique, server will add to database
     // otherwise, show error to user
-    let newUser = {
-      username: this.state.signupEmail,
-      email : "null@nul.com",
-      pass: this.state.pass
-    }
+    console.log("boolean : ",this.validateSignupForm());
 
-    
-      API.saveUser(newUser)
-        .then(res =>
-          console.log(res)
-        )
-        .catch(err => console.log(err));
-    
-    
-    // $.post("/api/users", newUser)
-    //   .then(function (res) {
-    //     console.log(res);
+    if (this.validateSignupForm())
+    {
+      let newUser = {
+        username: this.state.signupEmail,
+        email : "null2@nul.com",
+        password: this.state.signupPassconfirm
+      }
+      
+      console.log("newUser is : ",newUser);
+      
 
-    //     if (res === "true") {
-    //       alert("User created!");
-    //       window.location.replace("/profile");
-    //     }
-    //     else {
-         
-    //       $(`#signupMessage`).html("Username already taken!");
-    //     }
-
-
-      // });
-
-  }
+      
+        // API.saveUser(newUser)
+        //   .then(res=>    
+        //     console.log(`### API Response status : ${res.status} message : ${res.statusText} ###`)
+        //   )             
+        //   .catch(err => console.log(err));
+        
+            API.saveUser(newUser)
+          .then(function(res) {   
+            console.log("### API Response #####");
+            console.log(`status : ${res.status} - message : ${res.statusText} `);
+             
+        })           
+          .catch(err => console.log(err));
+        }
+      }
 
 
   render() {
     return (
       <div>
-        <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
+        <Hero backgroundImage="https://s8.postimg.cc/aqr93z6lx/test.jpg">
           <h1>GoPUBLk</h1>
         </Hero>
         <div className="container">
@@ -136,7 +148,7 @@ class LandingPage extends Component {
                       placeholder="Enter email"
 
                       value={this.state.loginEmail}
-                      onChange={this.handleChange}
+                      onChange={this.handleInputChange}
 
                     />
 
@@ -151,7 +163,7 @@ class LandingPage extends Component {
                       placeholder="Password"
 
                       value={this.state.loginpass}
-                      onChange={this.handleChange}
+                      onChange={this.handleInputChange}
                     />
                   </div>
                   <div className="form-group form-check">
@@ -177,7 +189,7 @@ class LandingPage extends Component {
                       aria-describedby="emailHelp"
                       placeholder="Enter email"
                       value={this.state.signupEmail}
-                      onChange={this.handleChange}
+                      onChange={this.handleInputChange}
                     />
                     <small className="form-text ">We'll never share your email with anyone else.</small>
                   </div>
@@ -190,9 +202,9 @@ class LandingPage extends Component {
                       className="form-control"
                       id="signupPass"
                       placeholder="Password"
-
+                    
                       value={this.state.signupPass}
-                      onChange={this.handleChange}
+                      onChange={this.handleInputChange}
 
                     />
                   </div>
@@ -207,14 +219,14 @@ class LandingPage extends Component {
                       placeholder="Password"
 
                       value={this.state.signupPassconfirm}
-                      onChange={this.handleChange}
+                      onChange={this.handleInputChange}
                     />
                   </div>
                   <div id="signupMessage"></div>
                   <button type="submit" id="signupSubmit" disabled={!this.validateSignupForm()} className="btn btn-primary">Submit</button>
                 </form>
               </div>
-
+                    
             </div>
           </div>
         </div>

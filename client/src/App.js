@@ -11,11 +11,7 @@ import LandingPage from "./pages/LandingPage/LandingPage";
 import ProjectDescription from "./pages/ProjectDesc/ProjectDesc";
 import Error from "./pages/404/404";
 import Results from "./pages/Results/Results";
-import MyInvestments from "./pages/MyInvestments/MyInvestments";
-import MyOffers from "./pages/MyOffers/MyOffers";
-import Offers from "./pages/Offers/Offers";
-import MyProjects from "./pages/MyProjects/MyProjects";
-import Favorites from "./pages/Favorites/Favorites";
+import Tests from "./pages/Tests/tests";
 
 const App = () => (
   <Router>
@@ -29,12 +25,8 @@ const App = () => (
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/results" component={Results} />
         <Route exact path="/projectDesc" component={ProjectDescription} />
-        <Route exact path="/myInvestments" component={MyInvestments} />
-        <Route exact path="/myProjects" component={MyProjects} />
-        <Route exact path="/myoffers" component={MyOffers} />
-        <Route exact path="/offers" component={Offers} />
-        <Route exact path="/favorites" component={Favorites} />
 
+        <Route exact path="/tests" component={Tests} />
 
          <Route  component={Error} />
       </Switch>
