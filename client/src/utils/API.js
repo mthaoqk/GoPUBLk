@@ -6,11 +6,10 @@ export default {
   },
 
   getProjects: function() {
-    return axios.get("../routes/api/projects");
+    return axios.get("/api/projects");
   },
 
-
-  createProject: function() {
+  createProject: function(project) {
     return axios.post("../routes/api/projects");
   },
   
@@ -19,8 +18,8 @@ export default {
     return axios.post("/api/users/register", User);
   },
 
-  checkUser: function(User) {
-    return axios.post("/api/users/login", User);
+  checkUser:function(User) {
+    return axios.post("/api/users/login",User);
   }
 
 };

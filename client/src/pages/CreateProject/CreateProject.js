@@ -5,7 +5,7 @@ import $ from 'jquery';
 import "./CreateProject.css";
 import API from "../../utils/API";
 
-// class CreateProject extends Component {
+class CreateProject extends Component {
 
   state = {
     title: "",
@@ -34,9 +34,7 @@ import API from "../../utils/API";
       API.createProject({
         title: this.state.title,
         description: this.state.description,
-        financing: this.state.financing,
-        body: this.state.body,
-        tags: this.state.tags,
+        tags: this.state.tags
       })
 
         .catch(err => console.log(err));
@@ -44,11 +42,44 @@ import API from "../../utils/API";
   };
 
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+
+    };
+  }
+
+  handleChange = event => {
+    this.setState({
+      [event.target.id]: event.target.value
+    });
+  }
+
+  handleCreateProjcectSubmit = event => {
+    console.log("Create project button pressed");
+    event.preventDefault();
+
+    let projectinfo = {
+
+    }
+
+    // get salt for username attempt
+    $.post("/newproject", projectinfo)
+      .then(function (res) {
+
+        console.log(res.body);
+      });
+
+
+  }
+
+
 
 
   render() {
     return (<div>
-      <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
+      <Hero backgroundImage="https://s8.postimg.cc/aqr93z6lx/test.jpg">
         <h1>GoPUBLk</h1>
       </Hero>
 
@@ -75,7 +106,6 @@ import API from "../../utils/API";
                 onChange={this.handleInputChange}
                 name="financing"
                 placeholder="Financial Need/Goal"
-                
               />
               <Input
                 value={this.state.body}
@@ -105,4 +135,4 @@ import API from "../../utils/API";
   }
 }
 
-// export default CreateProject;
+export default CreateProject;

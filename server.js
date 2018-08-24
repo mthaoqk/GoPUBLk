@@ -8,7 +8,10 @@ const app = express();
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+const logger = require('morgan');
+var flash = require('connect-flash');
 
+app.use(logger('dev'))
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -19,6 +22,8 @@ if (process.env.NODE_ENV === "production") {
 
 // Define API routes here
 // Add routes, both API and view
+// Connect Flash
+app.use(flash());
 
 app.use(session({
   secret: 'frufgnrvnrinrifr',
@@ -31,7 +36,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(routes);
-
 
 // Send every other request to the React app
 // Define any API routes before this runs

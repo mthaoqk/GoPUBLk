@@ -1,23 +1,11 @@
 var mongoose = require('mongoose');
+const User=require("./User");
 
 var uniqueValidator = require('mongoose-unique-validator');
 var slug = require('slug');
-<<<<<<< HEAD
-var User = mongoose.model('User');
-
-//var User = require("./User");
-
 
 var ProjectSchema = new mongoose.Schema({
     //slug: {type: String, lowercase: true, unique: true},
-=======
-// var User = mongoose.model('User');
-
-
-
-var ProjectSchema = new mongoose.Schema({
-    // slug: {type: String, lowercase: true, unique: true},
->>>>>>> f6d86e4079b246f9ab0ab24af800fef03937cb50
     title: String,
     description: String,
     financing: String,
@@ -55,11 +43,7 @@ ProjectSchema.methods.toJSONFor = function(user){
         author: this.author.toProfileJSONFor(user)
     };
 };
-<<<<<<< HEAD
 
-=======
-const Project = mongoose.model('Project', ProjectSchema);
->>>>>>> f6d86e4079b246f9ab0ab24af800fef03937cb50
 
 ProjectSchema.methods.updateFavoriteCount = function(){
     var project = this;
@@ -68,11 +52,7 @@ ProjectSchema.methods.updateFavoriteCount = function(){
         return project.save();
     });
 };
-<<<<<<< HEAD
 
 let project= mongoose.model('Project', ProjectSchema);
 
 module.exports= project;
-=======
-module.exports = Project;
->>>>>>> f6d86e4079b246f9ab0ab24af800fef03937cb50

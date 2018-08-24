@@ -8,7 +8,9 @@ var LocalStrategy= require("passport-local").Strategy;
 
 // Register User
 router.post('/register', function (req, res) {
-    var newUser= new User ({
+	
+	//console.log("info from React",req.body);
+	var newUser= new User ({
 
         username: req.body.username,
         email : req.body.email,
@@ -16,18 +18,37 @@ router.post('/register', function (req, res) {
    
    })
 
-   newUser.createUser(newUser, function (err, user) {
-    if (err) throw err;
-    console.log(newUser);
-    });
-    
-	res.redirect("/profile");
+   User.getUserByUsername(newUser.username, function (err, user) {
+	console.log("testing ",user);
+	if (err) throw err;
+	if (user) {
+		res.statusMessage =`User ${newUser.username} already exists! try new one`;
+    	res.status(401).end();
+	}
+	else {
+		newUser.createUser(newUser, function (err, user) {
+		if (err) throw err;
+		console.log(newUser);
+		});
+		res.statusMessage =`User ${newUser.username} is registered`;
+		res.status(201).end();
+	}
+   })	
 })
 
-router.get('/profile', function (req, res) {
-	//console.log(req.user);
-	res.json(req.user);
+// login user
+router.post('/login',
+	passport.authenticate('local',{failureFlash:true}),
+	function (req, res) {
+		res.json(req.user);		
+	});
+
+router.get('/logout', function (req, res) {
+	req.logout();
+	req.flash("success_msg","you are logged out");
+	res.redirect('/users/login');
 });
+
 
 router.get(userController.findAll);
 
@@ -38,8 +59,9 @@ router
   .put(userController.update)
   .delete(userController.remove);
 
-  router.route("/greet")
-    .get( (req, res) => res.send(`Hello, ${req.user.username}`))
+  router.route("/profile")
+	// .get( (req, res) => res.send(`Hello, ${req.user.username}`))
+	.get( (req, res) => res.json(req.user))
 
 
   router.get('/login', function (req, res) {
@@ -47,13 +69,16 @@ router
 	res.json(req.user);
 });
 
+
+// Express MiddleWare that retrieve req.body.username and req.body.password
 passport.use(new LocalStrategy(
 
 	function (username, password, done) {
-			console.log("hellooo from REact",username,password);
+
 			User.getUserByUsername(username, function (err, user) {
 			if (err) throw err;
 			if (!user) {
+				console.log("--- unknown user ---")
 				return done(null, false, { message: 'Unknown User' });
 			}
 
@@ -63,10 +88,10 @@ passport.use(new LocalStrategy(
 			User.comparePassword(password, user.password, function (err, isMatch) {
 				if (err) throw err;
 				if (isMatch) {
-					console.log("we have a match");
+					console.log("--- correct password ---");
 					return done(null, user);
 				} else {
-					console.log("not match");
+					console.log("---- invalid password ---");
 					return done(null, false, { message: 'Invalid password' });
 				}
 			});
@@ -85,19 +110,6 @@ passport.deserializeUser(function (id, done) {
 		console.log("deserialization....",user);
 		done(err, user);
 	});
-});
-
-router.post('/login',
-	passport.authenticate('local'),
-	function (req, res) {
-		res.json(req.user);
-		//res.redirect("/");
-	});
-
-router.get('/logout', function (req, res) {
-	req.logout();
-
-	res.redirect('/users/login');
 });
 
 module.exports = router;

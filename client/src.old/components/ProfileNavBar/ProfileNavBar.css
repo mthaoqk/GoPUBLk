@@ -1,0 +1,27 @@
+nav.navbar.navbar-default {
+  margin-bottom: 0;
+  background-color: white;
+}
+
+nav {
+  background-color: #e5222a;
+  color: white;
+  text-align: center;
+  font-family: 'Kosugi', sans-serif;
+}
+#logo{
+  height:50px;
+  width:50px;
+}
+
+a:link {
+  color: white;
+}
+/* visited link */
+a:visited {
+  color: white;
+}
+/* mouse over link */
+a:hover {
+  color: #08415c;
+}
