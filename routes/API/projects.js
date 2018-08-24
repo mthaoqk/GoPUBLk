@@ -51,6 +51,15 @@ router.put('/:Project', auth.required, function(req,res,next){
             if(typeof req.body.Project.body !== 'undefined'){
                 req.Project.body = req.body.Project.body;
             }
+            if(typeof req.body.Project.author !== 'undefined'){
+                req.Project.author = req.body.Project.author;
+            }
+            if(typeof req.body.Project.tagList !== 'undefined'){
+                req.Project.tagList = req.body.Project.tagList;
+            }
+            if(typeof req.body.Project.financing !== 'undefined'){
+                req.Project.financing = req.body.Project.financing;
+            }
             return req.Project.save().then(function(){
                 return res.json({Project: req.Project.toJSONFor(user)});
             });

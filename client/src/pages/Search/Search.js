@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Hero from "../../components/Hero";
 import "./Search.css";
 
-
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +22,6 @@ class Search extends Component {
 
   }
 
-
   render() {
     return (
       <div>
@@ -36,6 +34,7 @@ class Search extends Component {
           <input type="text" value={this.state.value} onChange={this.handleChange} />
           </label>
           <input type="submit" value="Submit" />
+          
         </form>
       </div>
   )
