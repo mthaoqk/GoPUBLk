@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
   getProfile: function() {
-    return axios.get("../routes/api/profiles");
+    return axios.get("/api/profiles");
   },
 
   getProjects: function() {
@@ -10,7 +10,7 @@ export default {
   },
 
   createProject: function(project) {
-    return axios.post("../routes/api/projects");
+    return axios.post("api/projects",project);
   },
   
   // register a user 
