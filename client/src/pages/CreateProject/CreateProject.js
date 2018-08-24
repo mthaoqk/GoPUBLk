@@ -13,6 +13,7 @@ class CreateProject extends Component {
     financing: "",
     body: "",
     tags: "",
+    slug: "",
 
 
   };
@@ -34,10 +35,11 @@ class CreateProject extends Component {
         financing: this.state.financing,
         body: this.state.body,
         tags: this.state.tags,
-        slug : "1233",
+        slug : this.state.slug,
       })
 
         .catch(err => console.log(err));
+        window.location.replace("/profile");
     }
   };
 
@@ -98,6 +100,12 @@ class CreateProject extends Component {
                 onChange={this.handleInputChange}
                 name="tags"
                 placeholder="categories and tags"
+              />
+              <Input
+                value={this.state.slug}
+                onChange={this.handleInputChange}
+                name="slug"
+                placeholder="slug"
               />
               <FormBtn
                 disabled={!(this.state.title && this.state.description && this.state.body && this.state.financing && this.state.tags)}
