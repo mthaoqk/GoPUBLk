@@ -6,19 +6,21 @@ export default {
   },
 
   getProjects: function() {
-    return axios.get("../routes/api/projects");
+    return axios.get("/api/projects");
   },
 
-
-  createProject: function() {
+  createProject: function(project) {
     return axios.post("../routes/api/projects");
   },
   
   // register a user 
   saveUser: function(User) {
-    return axios.post("/api/users", User);
+    return axios.post("/api/users/register", User);
+  },
+
+  checkUser:function(User) {
+    return axios.post("/api/users/login",User);
   }
-  
 
 };
 

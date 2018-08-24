@@ -1,0 +1,65 @@
+form {
+    font-family: 'Kosugi Maru', sans-serif;
+}
+h1{
+    font-family: 'Kosugi', sans-serif;
+    
+}
+h5{
+    font-family: 'Kosugi', sans-serif;
+    
+}
+/* .btn-primary {
+    color: #e5222a;
+    background-color: white;
+    border-color: #e5222a;
+
+} */
+
+.container {
+    margin-top: 30px;
+}
+<<<<<<< HEAD
+
+
+
+
+
+
+
+.card-img-top {
+    overflow: hidden;
+    align-self: center;
+    width: 300px;
+    height: 300px;
+}
+
+
+
+
+
+a.forgottonPass:link {
+=======
+#aboutImage{
+    width: 18rem;
+    box-shadow:2px 2px 5px #80755C;
+    background-color: #e5222a;
+>>>>>>> master
+    color: white;
+    margin-bottom: 30px;
+}
+a#linkProj:link {
+    color: #e5222a;
+}
+
+/* visited link */
+
+a#linkProj:visited {
+    color: #e5222a;
+}
+
+/* mouse over link */
+
+a#linkProj:hover {
+    color: white;
+}

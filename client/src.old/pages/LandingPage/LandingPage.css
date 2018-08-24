@@ -1,0 +1,43 @@
+form {
+    font-family: 'Kosugi Maru', sans-serif;
+}
+h1{
+    font-family: 'Kosugi', sans-serif;
+}
+:disabled {
+    background-color: #08415c;
+}
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: white;
+    border-color: #e5222a;
+}
+.btn-primary:hover{
+    background-color: #08415c;
+    border-color: #08415c;
+    color: white;
+}
+#LandingJum{
+    text-align: center;
+    margin-top: 30px;
+    background-color: #e5222a;
+    color: white;
+    box-shadow:2px 2px 5px #80755C;
+}
+a.forgottonPass:link {
+    color: white;
+}
+
+/* visited link */
+
+a.forgottonPass:visited {
+    color: white;
+}
+
+/* mouse over link */
+
+a.forgottonPass:hover {
+    color: white;
+}

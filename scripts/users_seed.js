@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const User = require("../models/User");
+const User = require("../models2/User");
+const Project = require("../models2/Project");
 
 // This file empties the Books collection and inserts the books below
 

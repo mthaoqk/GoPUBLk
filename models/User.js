@@ -5,7 +5,8 @@ var bcrypt= require("bcryptjs");
 var UserSchema = new mongoose.Schema({
    // username: {type: String, lowercase: true, required: [true, "can't be blank."], unique: true, index: true},
     username: {type: String, lowercase: true, unique: true, index: true},
-    email: {type: String, lowercase: true, required: [true, "can't be blank."], unique: true, index: true},
+    //email: {type: String, lowercase: true, required: [true, "can't be blank."], unique: true, index: true},
+    email: String,
     bio: String,
     image: String,
     // salt: String,
@@ -41,23 +42,29 @@ UserSchema.methods.createUser = function(newUser, callback){
 	});
 }
 
-UserSchema.methods.getUserByUsername = function(username, callback){
+UserSchema.static("getUserByUsername",function(username, callback){
 	var query = {username: username};
-	User.findOne(query, callback);
-}
+    this.findOne(query, callback);
+})
 
-UserSchema.methods.getUserById = function(id, callback){
-	User.findById(id, callback);
-}
+UserSchema.static("getUserById", function(id, callback){
+	this.findById(id, callback);
+})
 
-UserSchema.methods.comparePassword = function(candidatePassword, hash, callback){
+UserSchema.static("comparePassword",function(candidatePassword, hash, callback){
 	bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
     	if(err) throw err;
     	callback(null, isMatch);
-	});
-}
+	})
+})
+
+// module.exports.comparePassword = function(candidatePassword, hash, callback){
+// 	bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
+//     	if(err) throw err;
+//     	callback(null, isMatch);
+// 	});
+// }
 
 const User=mongoose.model("User",UserSchema);
 
 module.exports= User;
-
