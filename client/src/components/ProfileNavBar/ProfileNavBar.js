@@ -9,23 +9,23 @@ const ProfileNavBar = props => (
 
         <li
           className={
-            window.location.pathname === "/"
+            window.location.pathname === "/myprojects"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/" className="nav-link">
+          <Link to="/myProjects" className="nav-link">
             My Projects
           </Link>
         </li>
         <li
           className={
-            window.location.pathname === "/"
+            window.location.pathname === "/myInvestments"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/" className="nav-link">
+          <Link to="/myInvestments" className="nav-link">
             My Investments
           </Link>
         </li>
@@ -36,29 +36,29 @@ const ProfileNavBar = props => (
               : "nav-item"
           }
         >
-          <Link to="/" className="nav-link">
-            Favorite Projects
+          <Link to="/favorites" className="nav-link">
+            Favorite
           </Link>
         </li>
         <li
           className={
-            window.location.pathname === "/"
+            window.location.pathname === "/myOffers"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/" className="nav-link">
+          <Link to="/myOffers" className="nav-link">
             My Offers
           </Link>
         </li>
         <li
           className={
-            window.location.pathname === "/"
+            window.location.pathname === "/Offers"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/" className="nav-link">
+          <Link to="/Offers" className="nav-link">
            Offers
           </Link>
         </li>

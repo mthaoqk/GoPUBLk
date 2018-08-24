@@ -34,45 +34,14 @@ class CreateProject extends Component {
       API.createProject({
         title: this.state.title,
         description: this.state.description,
-        tags: this.state.tags
+        financing: this.state.financing,
+        body: this.state.body,
+        tags: this.state.tags,
       })
 
         .catch(err => console.log(err));
     }
   };
-
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-
-    };
-  }
-
-  handleChange = event => {
-    this.setState({
-      [event.target.id]: event.target.value
-    });
-  }
-
-  handleCreateProjcectSubmit = event => {
-    console.log("Create project button pressed");
-    event.preventDefault();
-
-    let projectinfo = {
-
-    }
-
-    // get salt for username attempt
-    $.post("/newproject", projectinfo)
-      .then(function (res) {
-
-        console.log(res.body);
-      });
-
-
-  }
 
 
 
@@ -106,6 +75,7 @@ class CreateProject extends Component {
                 onChange={this.handleInputChange}
                 name="financing"
                 placeholder="Financial Need/Goal"
+                
               />
               <Input
                 value={this.state.body}

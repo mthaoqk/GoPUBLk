@@ -92,7 +92,7 @@ class LandingPage extends Component {
         )
         .catch(err => console.log(err));
     
-
+    
     // $.post("/api/users", newUser)
     //   .then(function (res) {
     //     console.log(res);
