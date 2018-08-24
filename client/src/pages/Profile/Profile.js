@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import Hero from "../../components/Hero";
 import "./Profile.css";
 import ProfileNavBar from "../../components/ProfileNavBar/"
+import { List, ListItem } from "../../components/List";
+import { Link } from "react-router-dom";
 import API from "../../utils/API";
 
 
@@ -34,14 +36,14 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        <Hero backgroundImage="https://s8.postimg.cc/aqr93z6lx/test.jpg">
+        <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
           <h1>GoPUBLk</h1>
         </Hero>
 
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <div className="jumbotron">
+              <div id="profileJumb" className="jumbotron">
                 <h5>Professional Profile</h5>
 
               </div>
@@ -51,13 +53,13 @@ class Profile extends Component {
           <div className="row">
             <div className="col-md-12">
               <div class="card">
-                <img class="card-img-top" src={this.state.profile.image} alt="Card image cap"></img>
+                <img class="card-img-top" src={this.state.profile.image}></img>
                 <div class="card-body">
-                  <h5 class="card-title"></h5>
+                  <h5 class="card-title">Bio</h5>
                   <p>
                     {this.state.profile.bio}
-                    </p>
-                
+                  </p>
+
                 </div>
               </div>
             </div>
