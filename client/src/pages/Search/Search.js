@@ -28,12 +28,13 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
-          <h1>GoPUBLk</h1>
-        </Hero>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Search for Projects:
+      <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
+        <h1>GoPUBLk</h1>
+      </Hero>
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Search for Projects:
+
           <input type="text" value={this.state.value} onChange={this.handleChange} />
           </label>
           <input type="submit" value="Submit" />

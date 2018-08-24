@@ -5,7 +5,7 @@ import "./Navbar.css";
 const Navbar = props => (
   <nav className="navbar navbar-expand-lg">
     <Link className="navbar-brand" to="/">
-      <img id="logo" src="https://s15.postimg.cc/je0lkp23v/Transparent_Logo_Tre.png" alt="MyLogo" />
+      <img id="logo" src="https://s8.postimg.cc/7f1q6np9x/Logo.png" alt="MyLogo" />
     </Link>
     <div>
       <ul       className="navbar-nav navbarRow" >
