@@ -6,7 +6,7 @@ import "../Search/Search.js";
 
 const Results = () => (
     <div>
-        <Hero backgroundImage="https://s8.postimg.cc/aqr93z6lx/test.jpg">
+        <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
             <h1>GoPUBLk</h1>
         </Hero>
         <div className='container'>

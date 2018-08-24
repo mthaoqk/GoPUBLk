@@ -63,6 +63,18 @@ const ProfileNavBar = props => (
           </Link>
         </li>
 
+          <li
+          className={
+            window.location.pathname === "/Profile"
+              ? "nav-item active"
+              : "nav-item"
+          }
+        >
+          <Link to="/profile" className="nav-link">
+           Profile
+          </Link>
+        </li>
+
       </ul>
     </div>
   </nav>
