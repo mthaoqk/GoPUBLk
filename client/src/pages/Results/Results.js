@@ -10,7 +10,6 @@ class Results extends Component {
         tagList: "",
         Author: "",
         Description: ""
-
     };
     componentDidMount() {
         this.loadProjects();
@@ -26,11 +25,11 @@ class Results extends Component {
 
     render() {
         return (
-            <div>
-                <Hero backgroundImage="https://s8.postimg.cc/aqr93z6lx/test.jpg">
-                    <h1>GoPUBLk</h1>
-                </Hero>
 
+          <div>
+        <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
+            <h1>GoPUBLk</h1>
+        </Hero>
                 <div className='container'>
                     <div>
                         <h2 className="color-a">Search Results</h2>
