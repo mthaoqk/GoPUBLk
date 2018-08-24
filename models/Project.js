@@ -5,7 +5,7 @@ var uniqueValidator = require('mongoose-unique-validator');
 var slug = require('slug');
 
 var ProjectSchema = new mongoose.Schema({
-    //slug: {type: String, lowercase: true, unique: true},
+    slug: {type: String, lowercase: true, unique: true},
     title: String,
     description: String,
     financing: String,
