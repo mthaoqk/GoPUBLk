@@ -55,7 +55,7 @@ class About extends Component {
                         <li>Ease of use</li>
                         <li>Low barrier to entry</li>
                       </ul>
-                      <a href="/search" className="btn btn-primary" id="linkProj">Browse Projects</a>
+                      <a href="/discover" className="btn btn-primary" id="linkProj">Browse Projects</a>
                     </div>
                   </div>
                 </div>

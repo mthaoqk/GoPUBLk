@@ -1,6 +1,16 @@
-.btn-success {
-    color: #e5222a;
-    background-color: white;
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: #F5F5F5;
     border-color: #e5222a;
+}
 
+.btn-primary:hover{
+    background-color: #e5222a;
+    border-color: #08415c;
+    color: #F5F5F5;
+}
+#buttonForm {
+    box-shadow:2px 2px 5px #80755C;
 }
