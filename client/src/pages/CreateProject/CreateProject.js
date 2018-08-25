@@ -44,23 +44,9 @@ class CreateProject extends Component {
   };
 
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-
-    };
-  }
-
-  handleInputChange = event => {
-    let { name, value } = event.target;
-    this.setState({[name] : value})
-  };
-
-
   render() {
     return (<div>
-      <Hero backgroundImage="https://s8.postimg.cc/aqr93z6lx/test.jpg">
+      <Hero backgroundImage="https://s8.postimg.cc/m1z0cxyud/business_Angel.png">
         <h1>GoPUBLk</h1>
       </Hero>
 
@@ -101,12 +87,7 @@ class CreateProject extends Component {
                 name="tags"
                 placeholder="categories and tags"
               />
-              <Input
-                value={this.state.slug}
-                onChange={this.handleInputChange}
-                name="slug"
-                placeholder="slug"
-              />
+          
               <FormBtn
                 disabled={!(this.state.title && this.state.description && this.state.body && this.state.financing && this.state.tags)}
                 onClick={this.handleFormSubmit}

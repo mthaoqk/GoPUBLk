@@ -41,9 +41,9 @@ class Discover extends Component {
                         title={projects.title}
                         description={projects.description} 
                         financing={projects.financing}
-                        key={projects._id}
+                        body={projects.body}
                         favorite={projects.favorite}
-                        slug={projects.slug}
+                        key={projects._id}
                         
                       />
                     )

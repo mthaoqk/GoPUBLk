@@ -9,12 +9,12 @@ const ProfileNavBar = props => (
 
         <li
           className={
-            window.location.pathname === "/"
+            window.location.pathname === "/myProjects"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/" className="nav-link">
+          <Link to="/myProjects" className="nav-link">
             My Projects
           </Link>
         </li>
@@ -25,41 +25,56 @@ const ProfileNavBar = props => (
               : "nav-item"
           }
         >
-          <Link to="/" className="nav-link">
+          <Link to="/myInvestments" className="nav-link">
             My Investments
           </Link>
         </li>
+        
         <li
           className={
-            window.location.pathname === "/"
+            window.location.pathname === "/myOffers"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/" className="nav-link">
-            Favorite Projects
-          </Link>
-        </li>
-        <li
-          className={
-            window.location.pathname === "/"
-              ? "nav-item active"
-              : "nav-item"
-          }
-        >
-          <Link to="/" className="nav-link">
+          <Link to="/myOffers" className="nav-link">
             My Offers
           </Link>
         </li>
+
         <li
           className={
-            window.location.pathname === "/"
+            window.location.pathname === "/offers"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/" className="nav-link">
+          <Link to="/offers" className="nav-link">
            Offers
+          </Link>
+        </li>
+
+        <li
+          className={
+            window.location.pathname === "/favorites"
+              ? "nav-item active"
+              : "nav-item"
+          }
+        >
+          <Link to="/favorites" className="nav-link">
+            Favorites
+          </Link>
+        </li>
+
+       <li
+          className={
+            window.location.pathname === "profile"
+              ? "nav-item active"
+              : "nav-item"
+          }
+        >
+          <Link to="profile" className="nav-link">
+            Profile
           </Link>
         </li>
 

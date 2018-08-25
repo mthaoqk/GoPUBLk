@@ -38,7 +38,9 @@ img {
     height: 200px;
     width: 200px;
 }
-
+hr{
+    background-color: #F5F5F5;
+}
 a#linkProj:link {
     color: #e5222a;
 }

@@ -25,7 +25,7 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <Hero backgroundImage="https://s8.postimg.cc/aqr93z6lx/test.jpg">
+        <Hero backgroundImage="https://s8.postimg.cc/m1z0cxyud/business_Angel.png">
           <h1>GoPUBLk</h1>
         </Hero>
         <form onSubmit={this.handleSubmit}>

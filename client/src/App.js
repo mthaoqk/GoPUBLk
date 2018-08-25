@@ -1,17 +1,21 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import About from "./pages/About/About";
+import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-// import Wrapper from "./components/Wrapper";
-import CreateProject from "./pages/CreateProject/CreateProject";
+import CreateProject from "./pages/CreateProject";
 import Profile from "./pages/Profile/Profile";
-import Search from "./pages/Search//Search";
-import LandingPage from "./pages/LandingPage/LandingPage";
-import ProjectDescription from "./pages/ProjectDesc/ProjectDesc";
-import Error from "./pages/404/404";
-import Results from "./pages/Results/Results";
-import Tests from "./pages/Tests/tests";
+import Search from "./pages/Search";
+import LandingPage from "./pages/LandingPage";
+import ProjectDescription from "./pages/ProjectDesc";
+import Error from "./pages/404";
+import Results from "./pages/Results";
+import Discover from "./pages/Discover/discover";
+import MyInvenstments from "./pages/MyInvestments";
+import MyProjects from "./pages/MyProjects";
+import Favorites from "./pages/Favorites";
+import MyOffers from "./pages/MyOffers";
+import Offers from "./pages/Offers";
 
 const App = () => (
   <Router>
@@ -25,8 +29,12 @@ const App = () => (
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/results" component={Results} />
         <Route exact path="/projectDesc" component={ProjectDescription} />
-
-        <Route exact path="/tests" component={Tests} />
+        <Route exact path="/discover" component={Discover} />
+        <Route exact path="/myInvestments" component={MyInvenstments} />
+        <Route exact path="/myProjects" component={MyProjects} />
+        <Route exact path="/favorites" component={Favorites} />
+        <Route exact path="/myOffers" component={MyOffers} />
+        <Route exact path="/offers" component={Offers} />
 
          <Route  component={Error} />
       </Switch>
