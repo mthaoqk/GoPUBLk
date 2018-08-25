@@ -54,7 +54,7 @@ class CreateProject extends Component {
         <div className="row">
           <div className="col-md-12">
             <div id="CreateProjJumbotron" className="jumbotron">
-              <h1 id="CProjectTitle">Create a project</h1></div>
+              <h5 id="CProjectTitle">Create a project</h5></div>
             <form>
               <Input
                 value={this.state.title}

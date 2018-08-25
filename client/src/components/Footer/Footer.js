@@ -4,7 +4,7 @@ import NavBar from "../Navbar/Navbar";
 
 const Footer = () => (
   <footer className="footer">
-<h3>©Copyright</h3>
+<h5 id="footerHeader">©Copyright</h5>
 <NavBar/>
   </footer>
 );
