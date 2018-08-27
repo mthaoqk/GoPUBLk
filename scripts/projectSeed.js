@@ -30,7 +30,7 @@ const ProjectSeed = [
 
    project
   .remove({})
-  .then(() => project.collection.insertMany(projectSeed))
+  .then(() => project.collection.insertMany(ProjectSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
