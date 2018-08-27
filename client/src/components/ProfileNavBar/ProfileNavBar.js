@@ -9,13 +9,13 @@ const ProfileNavBar = props => (
 
         <li
           className={
-            window.location.pathname === "/myProjects"
+            window.location.pathname === "/EditProfile"
               ? "nav-item active"
               : "nav-item"
           }
         >
-          <Link to="/myProjects" className="nav-link">
-            My Projects
+          <Link to="/EditProfile" className="nav-link">
+            Edit Profile
           </Link>
         </li>
         <li

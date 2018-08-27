@@ -10,10 +10,10 @@ import API from "../../utils/API";
 
 class Profile extends Component {
   state = {
-    userName: "",
+    username: "",
     projects: [],
-    profile: "",
-    userId: "",
+    bio: "",
+    image: "",
 
   };
   
@@ -42,16 +42,16 @@ class Profile extends Component {
   }
 
   loadProfile = () => {
-    API.getProfile(this.userId)
-      .then(res =>
-        this.setState({ userName: "", profile: "" })
-      )
+  API.getProfile() 
+    .then(res =>
+        this.setState({ username: res.user.username, bio: res.user.bio, image:res.user.image, })
+    )
       .catch(err => console.log(err));
   }
   loadProjects = () => {
-    API.getProjects()
+    API.getUserProjects()
       .then(res =>
-        this.setState({ projects: [] })
+        this.setState({ projects: res.data })
       )
       .catch(err => console.log(err));
   }
@@ -75,7 +75,7 @@ class Profile extends Component {
           <div className="row">
             <div className="col-md-12">
               <div id="profileJumb" className="jumbotron">
-                <h5>Professional Profile</h5>
+                <h5>{this.state.username}'s Profile</h5>
 
               </div>
               <ProfileNavBar />
@@ -84,11 +84,11 @@ class Profile extends Component {
           <div className="row">
             <div className="col-md-12">
               <div className="card">
-                <img className="card-img-top" src={this.state.profile.image} alt="profleImg" ></img>
+                <img className="card-img-top" src={this.state.image}></img>
                 <div className="card-body">
                   <h5 className="card-title">Bio</h5>
                   <p>
-                    {this.state.profile.bio}
+                    {this.state.bio}
                   </p>
 
                 </div>

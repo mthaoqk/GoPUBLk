@@ -13,4 +13,9 @@ router
   .put(projectController.update)
   .delete(projectController.remove);
 
+  router
+  .route("/author")
+  .get(projectController.findByAuthor);
+  
+
 module.exports = router;
