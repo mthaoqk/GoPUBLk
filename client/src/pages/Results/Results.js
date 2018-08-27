@@ -30,7 +30,7 @@ class Results extends Component {
             .catch(err => console.log(err));
     }
     renderProjects = () => {
-        return this.state.projects.map(project => (
+        return this.state.map(project => (
             <List
                 _id={project._id}
                 key={project._id}
@@ -75,31 +75,6 @@ class Results extends Component {
     //         });
     // }
 
-    //     render() {
-    //         return (
-
-    //             <div>
-    //                 <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
-    //                     <h1>GoPUBLk</h1>
-    //                 </Hero>
-    //                 <div className='container'>
-    //                     <div>
-    //                         <h2 className="color-a">Search Results</h2>
-    //                     </div>
-    //                     <div classNanme="form-group row">
-    //                         <div className="col-s-12">
-    //                             <div>
-    //                                 <ListItem
-    //                                     renderProjects={this.renderProjects}
-    //                                 />
-    //                             </div>
-    //                         </div>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //         );
-    //     }
-    // }
     render() {
         return (
 
@@ -111,53 +86,82 @@ class Results extends Component {
                     <div>
                         <h2 className="color-a">Search Results</h2>
                     </div>
-                    <div classNanme="form-group row">
+                    <div className="form-group row">
                         <div className="col-s-12">
                             <div>
+                                <ListItem
+                                    renderProjects={this.renderProjects}
+                                    handleTopicChange={this. handleTopicChange}
+                                    handleUpdateChange={this. handleUpdateChange}
+                                    loadProjects={this.loadProjects}
 
-                                <lu>
-                                    <h5>ID #: </h5>
-                                    <h5>1</h5>
-                                    <h3>Title:</h3>
-                                    <h3>VR Body Suit</h3>
-                                    <p>Description: </p>
-                                    <p>Body suit for the full VR experience</p>
-                                    <p>Body:</p>
-                                    <p>Working with self-discovered technology to create a full body suit that works with any existing VR goggles</p>
-                                    <p>Author:</p>
-                                    <p>Andrew</p>
-                                    <p>Financing:</p>
-                                    <p>$20,000</p>
-
-                                </lu>
+                                />
                             </div>
-                        </div>
-                    </div>
-                    <div classNanme="form-group row">
-                        <div className="col-s-12">
-                            <lu>
-                                <h5>ID #: </h5>
-                                <h5>2</h5>
-                                <h3>Title:</h3>
-                                <h3>Workout Computer</h3>
-                                <p>Description: </p>
-                                <p>Computer to record all workouts by tracking body movement</p>
-                                <p>Body:</p>
-                                <p>Create an app that tracks all body movements with watch and workout bands to accurately track all movements</p>
-                                <p>Author:</p>
-                                <p>Matt</p>
-                                <p>Financing:</p>
-                                <p>$10,000</p>
-
-                            </lu>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         );
     }
 }
+//     render() {
+//         return (
+
+//             <div>
+//                 <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
+//                     <h1>GoPUBLk</h1>
+//                 </Hero>
+//                 <div className='container'>
+//                     <div>
+//                         <h2 className="color-a">Search Results</h2>
+//                     </div>
+//                     <div className="form-group row">
+//                         <div className="col-s-12">
+//                             <div>
+
+//                                 <lu>
+//                                     <h5>ID #: </h5>
+//                                     <h5>1</h5>
+//                                     <h3>Title:</h3>
+//                                     <h3>VR Body Suit</h3>
+//                                     <p>Description: </p>
+//                                     <p>Body suit for the full VR experience</p>
+//                                     <p>Body:</p>
+//                                     <p>Working with self-discovered technology to create a full body suit that works with any existing VR goggles</p>
+//                                     <p>Author:</p>
+//                                     <p>Andrew</p>
+//                                     <p>Financing:</p>
+//                                     <p>$20,000</p>
+
+//                                 </lu>
+//                             </div>
+//                         </div>
+//                     </div>
+//                     <div classNanme="form-group row">
+//                         <div className="col-s-12">
+//                             <lu>
+//                                 <h5>ID #: </h5>
+//                                 <h5>2</h5>
+//                                 <h3>Title:</h3>
+//                                 <h3>Workout Computer</h3>
+//                                 <p>Description: </p>
+//                                 <p>Computer to record all workouts by tracking body movement</p>
+//                                 <p>Body:</p>
+//                                 <p>Create an app that tracks all body movements with watch and workout bands to accurately track all movements</p>
+//                                 <p>Author:</p>
+//                                 <p>Matt</p>
+//                                 <p>Financing:</p>
+//                                 <p>$10,000</p>
+
+//                             </lu>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+
+
+//         );
+//     }
+// }
 
 export default Results;

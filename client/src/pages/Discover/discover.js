@@ -43,47 +43,50 @@ class Discover extends Component {
     return (
 
       <div>
-        <Hero backgroundImage="https://s8.postimg.cc/m1z0cxyud/business_Angel.png">
+        <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
           <h1>GoPUBLk</h1>
         </Hero>
-
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <div id="profileJumb" className="jumbotron">
-                <h5>Discover</h5>
-
+        <div className='container'>
+          <div>
+            <h2 className="color-a">Discover Projects</h2>
+          </div>
+          <div classNanme="form-group row">
+            <div className="col-s-12">
+              <div id="projList">
+                <lu>
+                  <h5><strong>ID #: 1</strong></h5>
+                  <h5></h5>
+                  <h3>Title: VR Body Suit</h3>
+                  <p>Description: Body suit for the full VR experience</p>
+                  <p>Body: Working with self-discovered technology to create a full body suit that works with any existing VR goggles</p>
+                  <p>Author: Andrew</p>
+                  <p>Financing: $20,000</p>
+                </lu>
               </div>
             </div>
           </div>
-          <div className="row">
-            <div className="col-md-12">
-              <ul className="list-group">
-                {
-                  this.state.projects.map((projects) =>
-                    <ListItem
-                      title={projects.title}
-                      description={projects.description}
-                      financing={projects.financing}
-                      body={projects.body}
-                      favorite={projects.favorite}
-                      key={projects._id}
-                      id={projects._id}
-                      slug={projects.slug}
-                      handleProjectInfo= {this.handleMoreSubmit}
 
-                    />
-                  )
-                }
-              </ul>
+          <div className="form-group row">
+            <div className="col-s-12">
+              <div id="projList">
+                <lu>
+                  <h5><strong>ID #: 2</strong></h5>
+                  <h3>Title: Workout Computer</h3>
+                  <h3></h3>
+                  <p>Description: Computer to record all workouts by tracking body movement</p>
+                  <p>Body: Create an app that tracks all body movements with watch and workout bands to accurately track all movements.</p>
+                  <p>Author: Matt</p>
+                  <p>Financing: $10,000</p>
+                </lu>
+              </div>
             </div>
           </div>
-
-
         </div>
       </div>
 
-    )
+
+
+    );
   }
 }
 
