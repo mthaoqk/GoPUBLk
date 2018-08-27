@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Hero from "../../components/Hero";
 import { Input, FormBtn } from "../../components/Form";
-import $ from 'jquery';
+// import $ from 'jquery';
 import "./CreateProject.css";
 import API from "../../utils/API";
 
