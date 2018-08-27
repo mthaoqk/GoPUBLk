@@ -1,10 +1,17 @@
 import axios from "axios";
 
 export default {
-  getProfile: function() {
-    return axios.get("/api/profiles");
+  updateProfile: function(User) {
+    return axios.put("/api/users/:id", User)
+  },
+  
+  getProfile: function(User) {
+    return axios.get("/api/users/:id", User);
   },
 
+  getUserProjects: function(){
+    return axios.get("/api/projects/author")
+  },
   getProjects: function() {
     return axios.get("/api/projects");
   },
