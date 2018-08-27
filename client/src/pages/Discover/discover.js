@@ -27,6 +27,18 @@ class Discover extends Component {
       .catch(err => console.log(err));
   }
 
+  handleMoreSubmit=id =>
+  {
+    console.log("clicked"); 
+    console.log(id);
+    let projectId=id;
+    //PROPS.HISTORY.PUSH()
+
+    this.props.history.push("/projectDesc/"+ projectId)
+
+    //window.location.replace("/project/"+ projectId);
+  }
+
   render() {
     return (
 
@@ -53,6 +65,7 @@ class Discover extends Component {
               </div>
             </div>
           </div>
+
           <div className="form-group row">
             <div className="col-s-12">
               <div id="projList">
@@ -64,8 +77,6 @@ class Discover extends Component {
                   <p>Body: Create an app that tracks all body movements with watch and workout bands to accurately track all movements.</p>
                   <p>Author: Matt</p>
                   <p>Financing: $10,000</p>
-
-
                 </lu>
               </div>
             </div>

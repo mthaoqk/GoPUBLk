@@ -3,7 +3,7 @@ import Hero from "../../components/Hero";
 import API from "../../utils/API";
 import "./Results.css";
 import List from "../../components/List/List"
-import { ListItem } from "../../components/List/ListItem";
+// import { ListItem } from "../../components/List/ListItem";
 
 
 

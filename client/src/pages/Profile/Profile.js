@@ -10,20 +10,41 @@ import API from "../../utils/API";
 
 class Profile extends Component {
   state = {
-    user: "",
+    userName: "",
     projects: [],
-    profile: ""
+    profile: "",
+    userId: "",
 
   };
+  
   componentDidMount() {
-    this.loadProfile();
+    this.loadUserId();
+    //this.loadProfile();
     this.loadProjects();
   }
 
+  loadUserId() {
+    
+
+     API
+    .getUserId()
+    .then(res=> { this.setState({
+      userName: res.data.username,
+      userId : res.data._id,
+     });   
+        console.log(res.data);    
+        console.log(this.state.userName);
+        console.log(this.state._id);  
+        
+      })
+    // .then(res=>this.setState({userId:res.data}))
+    .catch(err=> console.log(err));
+  }
+
   loadProfile = () => {
-    API.getProfile()
+    API.getProfile(this.userId)
       .then(res =>
-        this.setState({ user: "", profile: "" })
+        this.setState({ userName: "", profile: "" })
       )
       .catch(err => console.log(err));
   }
@@ -34,6 +55,15 @@ class Profile extends Component {
       )
       .catch(err => console.log(err));
   }
+
+  // returnUser(){
+  //   if (this.state.userId)
+  //   console.log("yes retrieve userid");
+  //     return "test";
+
+  // }
+
+
   render() {
     return (
       <div>
@@ -54,7 +84,7 @@ class Profile extends Component {
           <div className="row">
             <div className="col-md-12">
               <div className="card">
-                <img className="card-img-top" src={this.state.profile.image}></img>
+                <img className="card-img-top" src={this.state.profile.image} alt="profleImg" ></img>
                 <div className="card-body">
                   <h5 className="card-title">Bio</h5>
                   <p>
@@ -65,7 +95,7 @@ class Profile extends Component {
               </div>
             </div>
           </div>
-          <h5>User's Projects</h5>
+          <h5>{this.state.userName} Projects</h5>
           <hr></hr>
           <List>
             {this.state.projects.map(project => (
@@ -80,11 +110,6 @@ class Profile extends Component {
           </List>
         </div>
       </div>
-
-
-
-
-
 
     )
   }
