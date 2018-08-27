@@ -53,10 +53,10 @@ class Profile extends Component {
           </div>
           <div className="row">
             <div className="col-md-12">
-              <div class="card">
-                <img class="card-img-top" src={this.state.profile.image}></img>
-                <div class="card-body">
-                  <h5 class="card-title">Bio</h5>
+              <div className="card">
+                <img className="card-img-top" src={this.state.profile.image}></img>
+                <div className="card-body">
+                  <h5 className="card-title">Bio</h5>
                   <p>
                     {this.state.profile.bio}
                   </p>
