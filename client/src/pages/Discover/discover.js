@@ -33,7 +33,9 @@ class Discover extends Component {
     console.log(id);
     let projectId=id;
     //PROPS.HISTORY.PUSH()
+
     this.props.history.push("/projectDesc/"+ projectId)
+
     //window.location.replace("/project/"+ projectId);
   }
 

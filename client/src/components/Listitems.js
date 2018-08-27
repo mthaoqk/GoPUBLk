@@ -13,6 +13,7 @@ const ListItem = props => (
      <br/>
      <button className="btn btn-primary" id={props.id} onClick={()=>props.handleProjectInfo(props.id)}> more info </button>
    </li>
+
 );
 
 export default ListItem;
