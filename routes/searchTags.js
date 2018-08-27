@@ -25,3 +25,4 @@ for (var id in result) {
   console.log(item.content);
 
 }
+module.exports = router;

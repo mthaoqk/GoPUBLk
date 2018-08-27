@@ -39,7 +39,7 @@ ProjectSchema.methods.toJSONFor = function(user){
         favoritesCount: this.favoritesCount,
         favorited: user ? user.isFavorite(this._id) : false,
         createdAt: this.createdAt,
-        updatedAt: this.updatedAt,
+        // updatedAt: this.updatedAt,
         author: this.author.toProfileJSONFor(user)
     };
 };
