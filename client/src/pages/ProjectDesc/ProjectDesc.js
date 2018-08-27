@@ -21,11 +21,15 @@ class ProjectDescription extends Component {
   }
 
   loadProjects = () => {
-    API.getUnoProject()
-      .then(res =>
-        this.setState({ projects: res.data })
-      )
-      .catch(err => console.log(err));
+
+    console.log(window.location.pathname);
+    let path = window.location.pathname;
+    var projectId= path.replace("/Projects/", "");
+    console.log(projectId);
+    API
+    .getUnoProject(projectId)
+    .then(res=>console.log(res.data))
+    .catch(err=>console.log(err))
   }
 
   render() {

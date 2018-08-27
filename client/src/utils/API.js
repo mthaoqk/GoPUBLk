@@ -12,11 +12,11 @@ export default {
   },
 
   createProject: function(project) {
-    return axios.post("api/projects",project);
+    return axios.post("api/projects",project); 
   },
 
   getUnoProject: function(id) {
-    return axios.get("/api/projects/:id")
+    return axios.get("/api/projects/"+id)
   },
   
   // register a user 
