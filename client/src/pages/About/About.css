@@ -13,6 +13,7 @@ h5 {
     color: #e5222a;
     background-color: white;
     border-color: #e5222a;
+    margin-top: 10px;
 
 }
 
@@ -26,7 +27,7 @@ h5 {
     color: #F5F5F5;
 }
 #aboutImage {
-    height: 34rem;
+    height: 38rem;
     width: 16rem;
     box-shadow: 2px 2px 5px #80755C;
     background-color: #08415c;
