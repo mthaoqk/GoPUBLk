@@ -14,6 +14,10 @@ export default {
   createProject: function(project) {
     return axios.post("api/projects",project);
   },
+
+  getUnoProject: function(id) {
+    return axios.get("/api/projects/:id")
+  },
   
   // register a user 
   saveUser: function(User) {
@@ -27,6 +31,7 @@ export default {
   getUserId : function() {
     return axios.get("api/users/info")
   }
+
 
 };
 
