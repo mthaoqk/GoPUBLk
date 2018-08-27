@@ -67,7 +67,7 @@ router
   router.route("/profile")
 	// .get( (req, res) => res.send(`Hello, ${req.user.username}`))
 	.get( (req, res) => res.json(req.user))
-
+	.put(userController.update)
 
   router.get('/login', function (req, res) {
 	//console.log(req.user);
