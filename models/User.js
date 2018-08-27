@@ -48,8 +48,13 @@ UserSchema.static("getUserByUsername",function(username, callback){
 })
 
 UserSchema.static("getUserById", function(id, callback){
-	this.findById(id, callback);
+	this.findById(id,'-password',callback);
 })
+
+
+// UserSchema.static("getUserById", function(id, callback){
+// 	this.findById(id, callback);
+// })
 
 UserSchema.static("comparePassword",function(candidatePassword, hash, callback){
 	bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
