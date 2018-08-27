@@ -5,6 +5,8 @@ export default {
     return axios.get("/api/profiles");
   },
 
+
+
   getProjects: function() {
     return axios.get("/api/projects");
   },
@@ -20,6 +22,10 @@ export default {
 
   checkUser:function(User) {
     return axios.post("/api/users/login",User);
+  },
+
+  getUserId : function() {
+    return axios.get("api/users/info")
   }
 
 };
