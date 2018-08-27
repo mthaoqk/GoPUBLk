@@ -29,14 +29,16 @@ const App = () => (
         <Route exact path="/search" component={Search} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/results" component={Results} />
-        <Route exact path="/projectDesc" component={ProjectDescription} />
+    
         <Route exact path="/discover" component={Discover} />
         <Route exact path="/myInvestments" component={MyInvenstments} />
         <Route exact path="/myProjects" component={MyProjects} />
         <Route exact path="/favorites" component={Favorites} />
         <Route exact path="/myOffers" component={MyOffers} />
         <Route exact path="/offers" component={Offers} />
+        <Route path="/Projects/:id" component={ProjectDescription}/>  
         <Route exact path="/EditProfile" component={EditProfile} />
+
 
          <Route  component={Error} />
       </Switch>

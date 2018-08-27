@@ -33,7 +33,17 @@ class Discover extends Component {
     console.log(id);
     let projectId=id;
     //PROPS.HISTORY.PUSH()
-    this.props.history.push("/project/"+ projectId)
+
+
+    //call to  API testing
+    // API
+    // .getUnoProject(projectId)
+    // .then(res=>console.log(res.data))
+    // .catch(err=>console.log(err))
+    this.props.history.push("/Projects/"+ projectId)
+
+
+
     //window.location.replace("/project/"+ projectId);
   }
 
