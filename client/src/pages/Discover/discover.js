@@ -27,6 +27,16 @@ class Discover extends Component {
       .catch(err => console.log(err));
   }
 
+  handleMoreSubmit=id =>
+  {
+    console.log("clicked"); 
+    console.log(id);
+    let projectId=id;
+    //PROPS.HISTORY.PUSH()
+    this.props.history.push("/project/"+ projectId)
+    //window.location.replace("/project/"+ projectId);
+  }
+
   render() {
     return (
 
@@ -56,6 +66,9 @@ class Discover extends Component {
                       body={projects.body}
                       favorite={projects.favorite}
                       key={projects._id}
+                      id={projects._id}
+                      slug={projects.slug}
+                      handleProjectInfo= {this.handleMoreSubmit}
 
                     />
                   )

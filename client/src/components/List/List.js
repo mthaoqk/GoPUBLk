@@ -8,6 +8,7 @@ export const List = ({ children }) => {
         {children}
       </ul>
     </div>
+    
   );
 };
 export default List;

@@ -1,15 +1,6 @@
 const mongoose = require("mongoose");
 const Project = require("../models/Project");
-const User = require("../models/User");
 
-
-// // MongoDB
-// var mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost/news');
-// require('./models/Posts');
-// require('./models/Comments');
-
-// This file empties the Books collection and inserts the books below
 
 
 mongoose.connect(
@@ -19,20 +10,22 @@ mongoose.connect(
 
 const ProjectSeed = [
   {
-    title: "abc",
-    description: "abc@abc.com",
+   
+    title: "VR Body Suit",
+    description:"Body suit for the full VR experience",
+    body: "Working with self-made technology to create a full body suit that works with any existing VR goggles",
+    author: "Andrew",
     timestamp: new Date(Date.now()),
-    favorite: "rrr",
-    slug : "deerrrr"
+    financing: "20000",
   },
   {
-    title: "abfc",
-    description: "abc@frabc.com",
+    title: "Workout Computer",
+    description:"Computer to record all workouts by tracking body movement",
+    body: "Create an app that tracks all body movements with watch and workout bands to accurately track all movements",
+    author: "Matt",
     timestamp: new Date(Date.now()),
-    favorite: "frfr",
-    slug: "deedd"
+    financing: "10000",
   },
-  
 ];
 
 Project

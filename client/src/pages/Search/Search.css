@@ -1,4 +1,9 @@
-h2 {
+h5 {
     font-family: 'Kosugi', sans-serif;
     font-size: 30px;
+}
+
+#formSubmit {
+    padding: 3px;
+    
 }
