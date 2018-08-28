@@ -2,107 +2,129 @@ import React, { Component } from "react";
 import Hero from "../../components/Hero";
 import API from "../../utils/API";
 import "./Results.css";
-import List from "../../components/List/List"
-import { ListItem } from "../../components/List/ListItem";
+import { ResultsList } from "../../components/List/ResultsList";
+
 
 
 
 class Results extends Component {
-    state = {
-        Title: "",
-        tagList: "",
-        Author: "",
-        description: "",
-        body: "",
-        dateCreated: "",
-        financing: "",
+  state = {
+    Title: "",
+    Author: "",
+    Description: "",
+    Body: "",
+    financing: "",
+    Projects: [],
 
-    };
-    componentDidMount() {
-        this.loadProjects();
-    }
+  };
+  componentDidMount() {
+    this.loadProjects();
+  }
 
-    loadProjects = () => {
-        API.getProjects()
-            .then(res =>
-                this.setState({ projects: [] })
-            )
-            .catch(err => console.log(err));
-    }
-    renderProjects = () => {
-        return this.state.map(project => (
-            <List
-                _id={project._id}
-                key={project._id}
-                title={project.title}
-                dateCreated={project.dateCreated}
-                author={project.Author}
-                // dateUpdated={project.update_date}
-                tags={project.tagList}
-                decription={project.decription}
-                body={project.body}
-                financing={project.financing}
-                handleSaveButton={this.handleSaveButton}
-            />
-        ));
-    }
 
-    handleTopicChange = (event) => {
-        this.setState({ topic: event.target.value });
-    }
+  loadProjects = () => {
+    API.getProjects()
+      .then(res =>
+        this.setState({ Projects: res.data })
+      )
+      .catch(err => console.log(err));
+  }
 
-    handleDateCreatedChange = (event) => {
-        this.setState({ dateCreated: event.target.value });
-    }
+  handleMoreSubmit = id => {
+    console.log("clicked");
+    console.log(id);
+    let ProjectsId = id;
+    this.props.history.push("/Projects/" + ProjectsId)
+  }
 
-    handleUpdateChange = (event) => {
-        this.setState({ updateDate: event.target.value });
-    }
-    // handleFormSubmit = (event) => {
-    //     event.preventDefault();
-    //     console.log("Getting Projects");
-    //     console.log("Topic: ", this.state.topic);
-    //     console.log("Author: ", this.state.Author);
-    //     console.log("Creation Date: ", this.state.dateCreated);
-    //     // console.log("Update Date: ", this.state.updateDate);
-    //     console.log("Tags: ", this.state.tagList);
-    //     console.log("Description: ", this.state.description);
-    //     console.log("Body: ", this.state.body);
-    //     API.searchProjects(this.state.topic, this.state.author, this.state.tagList)
-    //         .then((res) => {
-    //             this.setState({ Projects: res.data.response.docs });
-    //             console.log("Projects: ", this.state.projects);
-    //         });
-    // }
 
-    render() {
-        return (
+  // renderProjectss = () => {
+  //   return this.state.map(Projects => (
+  //     <ResultsList
+  //       _id={Projects._id}
+  //       key={Projects._id}
+  //       title={Projects.title}
+  //       dateCreated={Projects.dateCreated}
+  //       author={Projects.Author}
+  //       // dateUpdated={Projects.update_date}
+  //       tags={Projects.tagList}
+  //       decription={Projects.decription}
+  //       body={Projects.body}
+  //       financing={Projects.financing}
+  //       handleSaveButton={this.handleSaveButton}
+  //     />
+  //   ));
+  // }
 
-            <div>
-                <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
-                    <h1>GoPUBLk</h1>
-                </Hero>
-                <div className='container'>
-                    <div>
-                        <h2 className="color-a">Search Results</h2>
-                    </div>
-                    <div className="form-group row">
-                        <div className="col-s-12">
-                            <div>
-                                <ListItem
-                                    renderProjects={this.renderProjects}
-                                    handleTopicChange={this. handleTopicChange}
-                                    handleUpdateChange={this. handleUpdateChange}
-                                    loadProjects={this.loadProjects}
-                                    handleDateCreatedChange={this.handleDateCreatedChange}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  // handleTopicChange = (event) => {
+  //   this.setState({ topic: event.target.value });
+  // }
+
+  // handleDateCreatedChange = (event) => {
+  //   this.setState({ dateCreated: event.target.value });
+  // }
+
+  // handleUpdateChange = (event) => {
+  //   this.setState({ updateDate: event.target.value });
+  // }
+  // handleFormSubmit = (event) => {
+  //     event.preventDefault();
+  //     console.log("Getting Projects");
+  //     console.log("Topic: ", this.state.topic);
+  //     console.log("Author: ", this.state.Author);
+  //     console.log("Creation Date: ", this.state.dateCreated);
+  //     // console.log("Update Date: ", this.state.updateDate);
+  //     console.log("Tags: ", this.state.tagList);
+  //     console.log("Description: ", this.state.description);
+  //     console.log("Body: ", this.state.body);
+  //     API.searchProjects(this.state.topic, this.state.author, this.state.tagList)
+  //         .then((res) => {
+  //             this.setState({ Projects: res.data.response.docs });
+  //             console.log("Projects: ", this.state.Projects);
+  //         });
+  // }
+
+  render() {
+    return (
+
+      <div>
+        <Hero backgroundImage="http://www.aesp.biz/wp-content/uploads/2018/06/business-angel.jpg">
+          <h1>GoPUBLk</h1>
+        </Hero>
+        <div className='container'>
+          <div className="row">
+            <div className="col-md-12">
+              <div id="profileJumb" className="jumbotron">
+                <h5>Search Results</h5>
+              </div>
             </div>
-        );
-    }
+          </div>
+          <div className="form-group row">
+            <div className="col-s-12">
+              <ul className="list-group">
+                {
+                  this.state.Projects.map((Projects) => (
+                    <ResultsList
+                      id={Projects._id}
+                      key={Projects._id}
+                      title={Projects.title}
+                      Author={Projects.author}
+                      decription={Projects.decription}
+                      body={Projects.body}
+                      financing={Projects.financing}
+                      slug={Projects.slug}
+                      handleProjectInfo={this.handleMoreSubmit}
+                    />
+                  ))
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    );
+  }
 }
 //     render() {
 //         return (

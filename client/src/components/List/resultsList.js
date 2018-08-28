@@ -1,10 +1,10 @@
 import React from "react";
 
-export const resultsList = props => (
+export const ResultsList = props => (
   <li className="list-group-item">
    <p><b>Title :</b> {props.title}</p>
-   <p><b>Summary :</b> {props.body}</p>
+   <p><b>Decription :</b> {props.decription}</p>
   </li>
 );
 
-export default resultsList;
+export default ResultsList;
