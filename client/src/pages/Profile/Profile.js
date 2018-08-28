@@ -10,11 +10,12 @@ import API from "../../utils/API";
 
 class Profile extends Component {
   state = {
-    username: "",
+    userName: "",
+    loginName:"",
     projects: [],
     bio: "",
     image: "https://cdn1.vectorstock.com/i/thumb-large/77/30/default-avatar-profile-icon-grey-photo-placeholder-vector-17317730.jpg",
-
+    userId: "",
   };
   
 
@@ -31,12 +32,15 @@ class Profile extends Component {
      API
     .getUserId()
     .then(res=> { this.setState({
-      userName: res.data.username,
+      userName: res.data.name,
       userId : res.data._id,
+      bio: res.data.bio,
+      image: res.data.image,
+      loginName: res.data.username,
      });   
         console.log(res.data);    
         console.log(this.state.userName);
-        console.log(this.state._id);  
+        console.log(this.state.userId);  
         
       })
     // .then(res=>this.setState({userId:res.data}))
@@ -50,6 +54,8 @@ class Profile extends Component {
     )
       .catch(err => console.log(err));
   }
+
+
   loadProjects = () => {
     API.getUserProjects()
       .then(res =>
@@ -58,14 +64,6 @@ class Profile extends Component {
       .catch(err => console.log(err));
   }
 
-  // returnUser(){
-  //   if (this.state.userId)
-  //   console.log("yes retrieve userid");
-  //     return "test";
-
-  // }
-
- 
 
   render() {
     return (
@@ -78,7 +76,7 @@ class Profile extends Component {
           <div className="row">
             <div className="col-md-12">
               <div id="profileJumb" className="jumbotron">
-                <h5>{this.state.username}'s Profile</h5>
+                <h5> Login: {this.state.loginName}'s Profile</h5>
 
               </div>
               <ProfileNavBar />

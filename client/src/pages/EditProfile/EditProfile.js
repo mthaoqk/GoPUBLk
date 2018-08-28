@@ -11,10 +11,36 @@ class EditProfile extends Component {
     
     bio: "",
     image: "",
-
+    userId:"",
+    name: "",
+    loginEmail: "",
 
   };
   
+
+  componentDidMount() {
+    this.loadUserId();
+  }
+
+  loadUserId() {
+     API
+    .getUserId()
+    .then(res=> { this.setState({
+      loginEmail: res.data.username,
+      userId : res.data._id,
+      bio : res.data.bio,
+      name: res.data.name,
+      image: res.data.image,
+     });   
+        console.log(res.data);    
+        console.log(this.state.loginEmail);
+        console.log(this.state.userId);  
+        
+      })
+    // .then(res=>this.setState({userId:res.data}))
+    .catch(err=> console.log(err));
+  }
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -24,15 +50,22 @@ class EditProfile extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log("Click")
+    console.log("Clicked update")
     if (this.state.bio) {
-      API.updateProfile({
-        bio: this.state.bio,
-        image: this.state.image,
-      })
+      API.updateProfile(
+        this.state.userId,
+        {
+          bio: this.state.bio,
+          image: this.state.image,
+          name : this.state.name,       
+        
+        })      
+      
 
+      
+        .then(res=>console.log(res))
         .catch(err => console.log(err));
-        window.location.replace("/profile");
+        //window.location.replace("/profile");
     }
   };
 
@@ -49,6 +82,17 @@ class EditProfile extends Component {
             <div id="CreateProjJumbotron" className="jumbotron">
               <h5 id="CProjectTitle">Create/Edit Profile</h5></div>
             <form>
+              <Input
+                value={this.state.loginEmail}              
+                name="login"
+                placeholder="email for login"
+              />
+               <Input
+                value={this.state.name}
+                onChange={this.handleInputChange}
+                name="name"
+                placeholder="Enter your Name"
+              />
               <Input
                 value={this.state.bio}
                 onChange={this.handleInputChange}
