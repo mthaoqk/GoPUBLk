@@ -13,10 +13,12 @@ class Profile extends Component {
     username: "",
     projects: [],
     bio: "",
-    image: "",
+    image: "https://cdn1.vectorstock.com/i/thumb-large/77/30/default-avatar-profile-icon-grey-photo-placeholder-vector-17317730.jpg",
 
   };
   
+
+
   componentDidMount() {
     this.loadUserId();
     //this.loadProfile();
@@ -63,6 +65,7 @@ class Profile extends Component {
 
   // }
 
+ 
 
   render() {
     return (
@@ -84,7 +87,7 @@ class Profile extends Component {
           <div className="row">
             <div className="col-md-12">
               <div className="card">
-                <img className="card-img-top" src={this.state.image}></img>
+                <img className="card-img-top img-fluid img-thumbnail" src={this.state.image} ></img>
                 <div className="card-body">
                   <h5 className="card-title">Bio</h5>
                   <p>

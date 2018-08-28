@@ -11,7 +11,7 @@ module.exports = {
   },
   findByAuthor: function(req, res) {
     Project
-      .db.collection.find({author=req.user._id})
+      .db.collection.find({author:req.user._id})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
