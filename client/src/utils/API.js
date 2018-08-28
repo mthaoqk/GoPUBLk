@@ -33,6 +33,11 @@ export default {
     return axios.post("/api/users/login",User);
   },
 
+  logOutUser:function() {
+    return axios.get("api/users/logout");
+  },
+
+
   getUserId : function() {
     return axios.get("api/users/info")
   }

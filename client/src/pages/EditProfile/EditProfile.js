@@ -63,7 +63,11 @@ class EditProfile extends Component {
       
 
       
-        .then(res=>console.log(res))
+        .then(res=> {
+          console.log(res);
+          this.props.history.push("/profile");
+        })
+
         .catch(err => console.log(err));
         //window.location.replace("/profile");
     }

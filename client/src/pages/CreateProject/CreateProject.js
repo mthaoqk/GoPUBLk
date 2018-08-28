@@ -14,9 +14,33 @@ class CreateProject extends Component {
     body: "",
     tags: "",
     slug: "",
-
-
+    userId:"",
+    message:"You need to login or sign in first!",
   };
+
+
+  componentDidMount() {
+    this.loadUserId();    
+  }
+
+  loadUserId() {    
+    
+     API
+    .getUserId()
+    .then(res=> { 
+      this.setState({      
+      userId : res.data._id,        
+     }); 
+     if (this.state.userId) {
+       this.setState({message:"Create"});
+     }  
+      console.log(this.state.userId);  
+       
+      })
+  
+    .catch(err=> console.log(err));
+  }
+
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -28,7 +52,7 @@ class CreateProject extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     console.log("Click")
-    if (this.state.title) {
+    if (this.state.title && this.state.userId) {
       API.createProject({
         title: this.state.title,
         description: this.state.description,
@@ -36,11 +60,15 @@ class CreateProject extends Component {
         body: this.state.body,
         tags: this.state.tags,
         slug: this.state.slug,
+        userId : this.state.userId
       })
 
         .catch(err => console.log(err));
       window.location.replace("/profile");
     }
+
+    else
+    { console.log("cannot submit, userId required")}
   };
 
 
@@ -54,7 +82,7 @@ class CreateProject extends Component {
         <div className="row">
           <div className="col-md-12">
             <div id="CreateProjJumbotron" className="jumbotron">
-              <h5 id="CProjectTitle">Create</h5>
+              <h5 id="CProjectTitle">{this.state.message}</h5>
               <hr></hr>
               <p> Create a project.</p>
             </div>
