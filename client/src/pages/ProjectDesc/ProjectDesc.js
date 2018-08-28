@@ -6,7 +6,7 @@ import "../Search/Search.js";
 
 class ProjectDescription extends Component {
   state = {
-
+    imageProject:"https://news.minitex.umn.edu/files/styles/full_content/public/ProjectManagement.jpg",
     projects: [],
 
   };
@@ -50,7 +50,11 @@ class ProjectDescription extends Component {
                    <li><b>body</b> : {this.state.projects.body} </li>
                    <li> <b>favorite</b>  : {this.state.projects.favorite} </li>
                    <li> <b>id</b>  : {this.state.projects._id} </li>
+                  <br>
+                  </br>
+                  <img className="ml-4 mb-4" src= {this.state.imageProject}></img>
                   </div>
+
                 }
               </ul>
             </div>
