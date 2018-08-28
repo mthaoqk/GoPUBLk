@@ -53,6 +53,6 @@ ProjectSchema.methods.updateFavoriteCount = function(){
     });
 };
 
-let project= mongoose.model('Project', ProjectSchema);
+const project= mongoose.model('Project', ProjectSchema);
 
 module.exports= project;

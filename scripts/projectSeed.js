@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const project = require("../models/Project");
+const Project = require("../models/Project");
 const User = require("../models/User");
 
 
@@ -28,9 +28,9 @@ const ProjectSeed = [
     },
   ];
 
-   project
+   Project
   .remove({})
-  .then(() => project.collection.insertMany(ProjectSeed))
+  .then(() => Project.collection.insertMany(ProjectSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
