@@ -1,5 +1,4 @@
 import React from "react";
-import Discover from "../pages/Discover/discover";
 
 const ListItem = props => (
 
