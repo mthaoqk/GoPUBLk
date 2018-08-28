@@ -54,7 +54,6 @@ class ProjectDescription extends Component {
                 <ul className="list-group">
                   {
                     <div>
-                      <li> <b>Title </b> : {this.state.projects.title} </li>
                       <li> <b>Description</b>  : {this.state.projects.description} </li>
                       <li> <b>Summary </b> : {this.state.projects.body} </li>
                       <li> <b>Finance </b>  : {this.state.projects.financing} </li>
