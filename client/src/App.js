@@ -17,6 +17,8 @@ import Favorites from "./pages/Favorites";
 import MyOffers from "./pages/MyOffers";
 import Offers from "./pages/Offers";
 import EditProfile from "./pages/EditProfile/EditProfile";
+import ContactUs from "./pages/ContactUs";
+import Logout from "./pages/Logout";
 
 const App = () => (
   <Router>
@@ -29,16 +31,16 @@ const App = () => (
         <Route exact path="/search" component={Search} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/results" component={Results} />
-    
+        <Route exact path="/contactus" component={ContactUs} />
         <Route exact path="/discover" component={Discover} />
         <Route exact path="/myInvestments" component={MyInvenstments} />
         <Route exact path="/myProjects" component={MyProjects} />
         <Route exact path="/favorites" component={Favorites} />
         <Route exact path="/myOffers" component={MyOffers} />
         <Route exact path="/offers" component={Offers} />
-        <Route path="/Projects/:id" component={ProjectDescription}/>  
+        <Route exact path="/logout" component={Logout} />
         <Route exact path="/EditProfile" component={EditProfile} />
-
+        <Route path="/Projects/:id" component={ProjectDescription}/>  
 
          <Route  component={Error} />
       </Switch>

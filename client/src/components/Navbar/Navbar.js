@@ -21,6 +21,17 @@ const Navbar = props => (
             Sign-In
           </Link>
         </li>
+        <li
+          className={
+            window.location.pathname === "/logout"
+              ? "nav-item active"
+              : "nav-item"
+          }
+        >
+          <Link to="/logout" className="nav-link">
+            Logout
+          </Link>
+        </li>
 
         <li
           className={
@@ -80,8 +91,20 @@ const Navbar = props => (
           <Link to="/about" className="nav-link">
             About
           </Link>
-        </li>
+        </li>     
         
+        <li
+          className={
+            window.location.pathname === "/contactus"
+              ? "nav-item active"
+              : "nav-item"
+          }
+        >
+          <Link to="/contactus" className="nav-link">
+            Contact Us
+          </Link>
+        </li>
+
       </ul>
     </div>
   </nav>

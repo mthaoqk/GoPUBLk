@@ -1,12 +1,12 @@
 import axios from "axios";
 
 export default {
-  updateProfile: function(User) {
-    return axios.put("/api/users/:id", User)
+  updateProfile: function(id,user) {
+    return axios.put("/api/users/"+id,user)
   },
   
-  getProfile: function(User) {
-    return axios.get("/api/users/:id", User);
+  getProfile: function(userId) {
+    return axios.get("/api/users/"+userId);
   },
 
   getUserProjects: function(){
@@ -32,6 +32,11 @@ export default {
   checkUser:function(User) {
     return axios.post("/api/users/login",User);
   },
+
+  logOutUser:function() {
+    return axios.get("api/users/logout");
+  },
+
 
   getUserId : function() {
     return axios.get("api/users/info")

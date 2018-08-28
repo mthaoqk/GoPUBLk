@@ -47,7 +47,7 @@ router.route("/info")
 .get(  (req,res) => res.json(req.user) )
 .post( (req,res) => res.json(req.user) )
 
-
+// Logout user
 router.get('/logout', function (req, res) {
 	req.logout();
 	req.flash("success_msg","you are logged out");

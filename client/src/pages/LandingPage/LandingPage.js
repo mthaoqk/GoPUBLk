@@ -18,6 +18,8 @@ class LandingPage extends Component {
       signupEmail: "",
       signupPass: "",
       signupPassconfirm: "",
+      display:"d-none",  // hide message
+      message:"",
     };
   }
 
@@ -87,7 +89,7 @@ class LandingPage extends Component {
 
 
   handleSignupSubmit = event => {
-    console.log("Submit signup button pressed");
+    console.log("Submit signup button pressed");   
     event.preventDefault();
 
     // attempt to add new user to the database 
@@ -113,9 +115,11 @@ class LandingPage extends Component {
       //   .catch(err => console.log(err));
 
       API.saveUser(newUser)
-        .then(function (res) {
+        .then( (res)=> {
+          this.setState({message: res.statusText });
           console.log("### API Response #####");
           console.log(`status : ${res.status} - message : ${res.statusText} `);
+         
           window.location.replace("/discover");
         })
         .catch(err => console.log(err));
@@ -231,9 +235,12 @@ class LandingPage extends Component {
                   <button type="submit" id="signupSubmit" disabled={!this.validateSignupForm()} className="btn btn-primary">Submit</button>
                 </form>
               </div>
-
+             
+      
             </div>
-
+            <div className={"alert alert-success mt-3 "+this.state.display} role="alert">
+                    <h1 className="text-center">{this.state.message}</h1>
+              </div>
           </div>
         </div>
       </div >

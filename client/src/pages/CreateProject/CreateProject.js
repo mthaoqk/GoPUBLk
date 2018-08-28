@@ -14,10 +14,34 @@ class CreateProject extends Component {
     body: "",
     tags: "",
     slug: "",
-
-
+    userId:"",
+    message:"You need to login or sign in first!",
   };
+
+
+  componentDidMount() {
+    this.loadUserId();    
+  }
+
+  loadUserId() {    
+    
+     API
+    .getUserId()
+    .then(res=> { 
+      this.setState({      
+      userId : res.data._id,        
+     }); 
+     if (this.state.userId) {
+       this.setState({message:"Create"});
+     }  
+      console.log(this.state.userId);  
+       
+      })
   
+    .catch(err=> console.log(err));
+  }
+
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -28,19 +52,23 @@ class CreateProject extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     console.log("Click")
-    if (this.state.title) {
+    if (this.state.title && this.state.userId) {
       API.createProject({
         title: this.state.title,
         description: this.state.description,
         financing: this.state.financing,
         body: this.state.body,
         tags: this.state.tags,
-        slug : this.state.slug,
+        slug: this.state.slug,
+       // userId : this.state.userId
       })
 
         .catch(err => console.log(err));
-        window.location.replace("/profile");
+      window.location.replace("/profile");
     }
+
+    else
+    { console.log("cannot submit, userId required")}
   };
 
 
@@ -54,7 +82,11 @@ class CreateProject extends Component {
         <div className="row">
           <div className="col-md-12">
             <div id="CreateProjJumbotron" className="jumbotron">
-              <h5 id="CProjectTitle">Create a project</h5></div>
+              <h5 id="CProjectTitle">{this.state.message}</h5>
+              <hr></hr>
+              <p> Create a project.</p>
+            </div>
+
             <form>
               <Input
                 value={this.state.title}
@@ -87,7 +119,7 @@ class CreateProject extends Component {
                 name="tags"
                 placeholder="categories and tags"
               />
-          
+
               <FormBtn
                 disabled={!(this.state.title && this.state.description && this.state.body && this.state.financing && this.state.tags)}
                 onClick={this.handleFormSubmit}
@@ -95,6 +127,7 @@ class CreateProject extends Component {
                 Submit Project
               </FormBtn>
             </form>
+            
           </div>
         </div>
       </div>
