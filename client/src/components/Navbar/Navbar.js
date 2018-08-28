@@ -81,6 +81,18 @@ const Navbar = props => (
             About
           </Link>
         </li>
+
+          <li
+          className={
+            window.location.pathname === "/logout"
+              ? "nav-item active"
+              : "nav-item"
+          }
+        >
+          <Link to="/logout" className="nav-link">
+            Logout
+          </Link>
+        </li>
         
       </ul>
     </div>
