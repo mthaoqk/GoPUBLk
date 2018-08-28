@@ -60,6 +60,8 @@ class Discover extends Component {
             <div className="col-md-12">
               <div id="profileJumb" className="jumbotron">
                 <h5>Discover</h5>
+                <hr></hr>
+                <p>Browse through all available projects.</p>
 
               </div>
             </div>

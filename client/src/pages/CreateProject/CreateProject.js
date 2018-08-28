@@ -17,7 +17,7 @@ class CreateProject extends Component {
 
 
   };
-  
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -35,11 +35,11 @@ class CreateProject extends Component {
         financing: this.state.financing,
         body: this.state.body,
         tags: this.state.tags,
-        slug : this.state.slug,
+        slug: this.state.slug,
       })
 
         .catch(err => console.log(err));
-        window.location.replace("/profile");
+      window.location.replace("/profile");
     }
   };
 
@@ -54,7 +54,11 @@ class CreateProject extends Component {
         <div className="row">
           <div className="col-md-12">
             <div id="CreateProjJumbotron" className="jumbotron">
-              <h5 id="CProjectTitle">Create a project</h5></div>
+              <h5 id="CProjectTitle">Create</h5>
+              <hr></hr>
+              <p> Create a project.</p>
+            </div>
+
             <form>
               <Input
                 value={this.state.title}
@@ -87,7 +91,7 @@ class CreateProject extends Component {
                 name="tags"
                 placeholder="categories and tags"
               />
-          
+
               <FormBtn
                 disabled={!(this.state.title && this.state.description && this.state.body && this.state.financing && this.state.tags)}
                 onClick={this.handleFormSubmit}
@@ -95,6 +99,7 @@ class CreateProject extends Component {
                 Submit Project
               </FormBtn>
             </form>
+            
           </div>
         </div>
       </div>
