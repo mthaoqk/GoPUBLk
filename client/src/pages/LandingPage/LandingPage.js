@@ -120,7 +120,7 @@ class LandingPage extends Component {
           console.log("### API Response #####");
           console.log(`status : ${res.status} - message : ${res.statusText} `);
          
-          //window.location.replace("/discover");
+          window.location.replace("/discover");
         })
         .catch(err => console.log(err));
     }

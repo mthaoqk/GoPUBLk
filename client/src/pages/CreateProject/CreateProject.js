@@ -60,7 +60,7 @@ class CreateProject extends Component {
         body: this.state.body,
         tags: this.state.tags,
         slug: this.state.slug,
-        userId : this.state.userId
+       // userId : this.state.userId
       })
 
         .catch(err => console.log(err));
