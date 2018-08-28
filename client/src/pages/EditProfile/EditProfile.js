@@ -13,7 +13,7 @@ class EditProfile extends Component {
     image: "",
     userId:"",
     name: "",
-    loginEmail: "",
+    loginEmail: "You need to login or signup first",
 
   };
   

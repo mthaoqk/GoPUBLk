@@ -11,7 +11,7 @@ import API from "../../utils/API";
 class Profile extends Component {
   state = {
     userName: "",
-    loginName:"",
+    loginName:"you need to sign-in or register first",
     projects: [],
     bio: "",
     image: "https://cdn1.vectorstock.com/i/thumb-large/77/30/default-avatar-profile-icon-grey-photo-placeholder-vector-17317730.jpg",
@@ -26,17 +26,16 @@ class Profile extends Component {
     this.loadProjects();
   }
 
-  loadUserId() {
+  loadUserId() {    
     
-
      API
     .getUserId()
     .then(res=> { this.setState({
-      userName: res.data.name,
+      userName: (res.data.name)? res.data.name: this.state.loginName,
       userId : res.data._id,
       bio: res.data.bio,
-      image: res.data.image,
-      loginName: res.data.username,
+      image: (res.data.image)? res.data.image : this.state.image,
+      loginName: (res.data.username)? res.data.username: this.state.loginName,
      });   
         console.log(res.data);    
         console.log(this.state.userName);
@@ -50,7 +49,7 @@ class Profile extends Component {
   loadProfile = () => {
   API.getProfile() 
     .then(res =>
-        this.setState({ username: res.user.username, bio: res.user.bio, image:res.user.image, })
+        this.setState({ loginName:res.user.username,userName: res.user.name, bio: res.user.bio, image:res.user.image, })
     )
       .catch(err => console.log(err));
   }
