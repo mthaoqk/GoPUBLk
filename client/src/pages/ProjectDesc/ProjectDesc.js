@@ -61,7 +61,31 @@ class ProjectDescription extends Component {
                       <br>
                       </br>
                       <img className="ml-4 mb-4" src={this.state.imageProject}></img>
+                    <button className= "btn btn-primary">Leave a comment </button>
+                    
+                    <button type="button" className="btn btn-primary">
+                      
+                        <span className="sr-only">unread messages</span>
+                        <span className="icon is-large has-text-danger"><i className="far fa-thumbs-up"></i></span>
+                        Like <span className="badge badge-light">50</span>
+                  </button>
+                  
+                  <button type="button" class="btn btn-danger">
+                      
+                        <span className="sr-only">unread messages</span>
+                        <span className="icon is-large has-text-danger"><i className="far fa-thumbs-down"></i></span>
+                        DisLike <span className="badge badge-light">4</span>
+                </button>
+                
+                <button className="choices btn-lg"> <i className="far fa-hand-point-right"></i> add to favorite </button>
+                <button className="offer btn-lg"> <i className="far fa-hand-point-right"></i> make an offer </button>
+                
+                
+
+                    
+                    
                     </div>
+                    
                   }
                 </ul>
               </div>
