@@ -17,6 +17,7 @@ import Favorites from "./pages/Favorites";
 import MyOffers from "./pages/MyOffers";
 import Offers from "./pages/Offers";
 import EditProfile from "./pages/EditProfile/EditProfile";
+import ContactUs from "./pages/ContactUs";
 
 const App = () => (
   <Router>
@@ -29,7 +30,7 @@ const App = () => (
         <Route exact path="/search" component={Search} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/results" component={Results} />
-    
+        <Route exact path="/contactus" component={ContactUs} />
         <Route exact path="/discover" component={Discover} />
         <Route exact path="/myInvestments" component={MyInvenstments} />
         <Route exact path="/myProjects" component={MyProjects} />

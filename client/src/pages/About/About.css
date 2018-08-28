@@ -22,14 +22,14 @@ h5 {
 }
 
 #aboutJumb {
-    box-shadow: 2px 2px 5px #80755C;
+    box-shadow: 2px 2px 5px 2px #80755C;
     background-color: #08415c;
     color: #F5F5F5;
 }
 #aboutImage {
     height: 38rem;
     width: 16rem;
-    box-shadow: 2px 2px 5px #80755C;
+    box-shadow: 2px 2px 5px 2px #80755C;
     background-color: #08415c;
     color: #F5F5F5;
     margin-bottom: 30px;

@@ -82,6 +82,18 @@ const Navbar = props => (
           </Link>
         </li>
         
+        <li
+          className={
+            window.location.pathname === "/contactus"
+              ? "nav-item active"
+              : "nav-item"
+          }
+        >
+          <Link to="/contactus" className="nav-link">
+            Contact Us
+          </Link>
+        </li>
+
       </ul>
     </div>
   </nav>
